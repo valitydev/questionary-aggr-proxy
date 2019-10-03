@@ -27,9 +27,9 @@ public class DaDataBankHandler extends AbstractDaDataHandler {
             throw new IllegalArgumentException("Need to specify bank query");
         }
         final BankQuery bankQuery = request.getBankQuery();
-        log.debug("BankQuery: {}", bankQuery);
+        log.info("BankQuery: {}", bankQuery);
         final DaDataQuery daDataQuery = DaDataQueryMapper.toQuery(bankQuery);
-        log.debug("PartyQuery after converting: {}", daDataQuery);
+        log.info("PartyQuery after converting: {}", daDataQuery);
         final ResponseEntity<String> responseEntity = daDataApi.bankRequest(daDataQuery);
         final BankResponseWrapper bankResponseWrapper = getObjectMapper().readValue(responseEntity.getBody(), BankResponseWrapper.class);
         final List<BankContentWrapper> bankContentWrapperList = bankResponseWrapper.getBankContentWrapperList();

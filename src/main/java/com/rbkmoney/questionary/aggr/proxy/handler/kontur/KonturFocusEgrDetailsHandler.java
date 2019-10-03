@@ -23,7 +23,7 @@ public class KonturFocusEgrDetailsHandler extends AbstractKonturFocusHandler {
             throw new IllegalArgumentException("Need to specify egrDetails query");
         }
         final EgrDetailsQuery egrDetailsQuery = request.getEgrDetailsQuery();
-        log.debug("EgrDetailsQuery: {}", egrDetailsQuery);
+        log.info("EgrDetailsQuery: {}", egrDetailsQuery);
         final ResponseEntity<String> responseEntity = konturFocusApi.egrDetailsRequest(egrDetailsQuery.getOgrn(), egrDetailsQuery.getInn());
         final List<EgrDetailsResponse> egrDetailsResponseList = getObjectMapper().readValue(responseEntity.getBody(),
                 new TypeReference<List<EgrDetailsResponse>>() {

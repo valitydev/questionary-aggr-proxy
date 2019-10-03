@@ -29,9 +29,9 @@ public class DaDataOkvedHandler extends AbstractDaDataHandler {
             throw new IllegalArgumentException("Need to specify okved query");
         }
         final OkvedQuery okvedQuery = request.getOkvedQuery();
-        log.debug("OkvedQuery: {}", okvedQuery);
+        log.info("OkvedQuery: {}", okvedQuery);
         final DaDataQuery daDataQuery = DaDataQueryMapper.toQuery(okvedQuery);
-        log.debug("OkvedQuery after converting: {}", daDataQuery);
+        log.info("OkvedQuery after converting: {}", daDataQuery);
         ResponseEntity<String> responseEntity = null;
 
         if (!okvedQuery.isSetQueryType()) {

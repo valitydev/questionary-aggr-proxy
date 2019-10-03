@@ -23,7 +23,7 @@ public class KonturFocusLicencesHandler extends AbstractKonturFocusHandler {
             throw new IllegalArgumentException("Need to specify licences query");
         }
         final LicencesQuery licencesQuery = request.getLicencesQuery();
-        log.debug("LicensesQuery: {}", licencesQuery);
+        log.info("LicensesQuery: {}", licencesQuery);
         final ResponseEntity<String> responseEntity = konturFocusApi.licenseRequest(licencesQuery.getOgrn(), licencesQuery.getInn());
         final List<LicencesResponse> licencesResponseList = getObjectMapper().readValue(responseEntity.getBody(),
                 new TypeReference<List<LicencesResponse>>() {

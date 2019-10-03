@@ -23,13 +23,13 @@ public class DaDataPartyHandler extends AbstractDaDataHandler {
 
     @Override
     protected DaDataResponse handleRequest(DaDataRequest request) throws Exception {
-        if (request.isSetPartyQuery()) {
+        if (!request.isSetPartyQuery()) {
             throw new IllegalArgumentException("Need to specify party query");
         }
         final PartyQuery partyQuery = request.getPartyQuery();
-        log.debug("PartyQuery: {}", partyQuery);
+        log.info("PartyQuery: {}", partyQuery);
         final DaDataQuery daDataQuery = DaDataQueryMapper.toQuery(partyQuery);
-        log.debug("PartyQuery after converting: {}", daDataQuery);
+        log.info("PartyQuery after converting: {}", daDataQuery);
         final ResponseEntity<String> responseEntity = daDataApi.partyRequest(daDataQuery);
         final PartyResponseWrapper partyResponseWrapper = getObjectMapper().readValue(responseEntity.getBody(), PartyResponseWrapper.class);
         final List<PartyContent> partyContentList = partyResponseWrapper.getPartyContentWrapperList().stream()

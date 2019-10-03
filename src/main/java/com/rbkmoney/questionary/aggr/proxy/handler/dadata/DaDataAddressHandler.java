@@ -23,9 +23,9 @@ public class DaDataAddressHandler extends AbstractDaDataHandler {
             throw new IllegalArgumentException("Need to specify address query");
         }
         final AddressQuery addressQuery = request.getAddressQuery();
-        log.debug("AddressQuery: {}", addressQuery);
+        log.info("AddressQuery: {}", addressQuery);
         final DaDataQuery daDataQuery = DaDataQueryMapper.toQuery(addressQuery);
-        log.debug("AddressQuery after converting: {}", daDataQuery);
+        log.info("AddressQuery after converting: {}", daDataQuery);
         final ResponseEntity<String> responseEntity = daDataApi.addressRequest(daDataQuery);
 
         final AddressResponse addressResponse = getObjectMapper().readValue(responseEntity.getBody(), AddressResponse.class);

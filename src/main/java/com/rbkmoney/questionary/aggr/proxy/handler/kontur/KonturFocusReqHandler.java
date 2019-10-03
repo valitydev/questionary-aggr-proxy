@@ -23,7 +23,7 @@ public class KonturFocusReqHandler extends AbstractKonturFocusHandler {
             throw new IllegalArgumentException("Need to specify req query");
         }
         final ReqQuery reqQuery = request.getReqQuery();
-        log.debug("ReqQuery: {}", reqQuery);
+        log.info("ReqQuery: {}", reqQuery);
         final ResponseEntity<String> responseEntity = konturFocusApi.reqRequest(reqQuery.getOgrn(), reqQuery.getInn());
 
         final List<ReqResponse> regResponseList = getObjectMapper().readValue(responseEntity.getBody(), new TypeReference<List<ReqResponse>>() {
