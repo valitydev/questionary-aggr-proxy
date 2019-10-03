@@ -3,17 +3,17 @@ package com.rbkmoney.questionary.aggr.proxy.servlet;
 import com.rbkmoney.damsel.questionary_proxy_aggr.QuestionaryAggrProxyHandlerSrv;
 import com.rbkmoney.questionary.aggr.proxy.handler.QuestionaryAggrProxyHandler;
 import com.rbkmoney.woody.thrift.impl.http.THServiceBuilder;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 
 import javax.servlet.*;
 import javax.servlet.annotation.WebServlet;
 import java.io.IOException;
 
-@WebServlet("/questionary/proxy")
+@WebServlet("/v1/questionary/proxy")
+@RequiredArgsConstructor
 public class QuestionaryAggrProxyServlet extends GenericServlet {
 
-    @Autowired
-    private QuestionaryAggrProxyHandler handler;
+    private final QuestionaryAggrProxyHandler handler;
 
     private Servlet servlet;
 

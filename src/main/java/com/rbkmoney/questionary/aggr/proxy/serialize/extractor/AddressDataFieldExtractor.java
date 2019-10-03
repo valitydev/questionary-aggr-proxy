@@ -17,16 +17,16 @@ public class AddressDataFieldExtractor implements FieldExtractor<Address> {
         instance.setFiasCode(JsonHelper.safeGet(node, "fias_code", JsonNode::textValue));
         final String fiasLevel = JsonHelper.safeGet(node, "fias_level", JsonNode::textValue);
         if (fiasLevel != null) {
-            instance.setFiasLevel(Byte.valueOf(fiasLevel));
+            instance.setFiasLevel(Byte.parseByte(fiasLevel));
         }
         final String fiasActualityState = JsonHelper.safeGet(node, "fias_actuality_state", JsonNode::textValue);
         if (fiasActualityState != null) {
-            instance.setFiasActualityState(Byte.valueOf(fiasActualityState));
+            instance.setFiasActualityState(Byte.parseByte(fiasActualityState));
         }
         instance.setGeonameId(JsonHelper.safeGet(node, "geoname_id", JsonNode::textValue));
         final String capitalMarket = JsonHelper.safeGet(node, "capital_marker", JsonNode::textValue);
         if (capitalMarket != null) {
-            instance.setCapitalMarker(Byte.valueOf(capitalMarket));
+            instance.setCapitalMarker(Byte.parseByte(capitalMarket));
         }
         instance.setOkato(JsonHelper.safeGet(node, "okato", JsonNode::textValue));
         instance.setOktmo(JsonHelper.safeGet(node, "oktmo", JsonNode::textValue));
