@@ -66,6 +66,11 @@ public abstract class AbstractThriftDeserializer<E extends TFieldIdEnum, T exten
                 }
 
                 final E field = getField(fieldConverter.convert(currentField.getKey()));
+                if (field == null) {
+                    log.warn("Unknown field: '{}'", currentField.getKey());
+                    continue;
+                }
+
                 final JsonParser parser = currentField.getValue().traverse();
                 parser.setCodec(mapper);
                 final JavaType generateValueType = generateValueType(instance, field, ctx.getTypeFactory());
