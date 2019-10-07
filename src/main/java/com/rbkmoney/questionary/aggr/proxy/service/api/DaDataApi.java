@@ -81,7 +81,6 @@ public class DaDataApi {
         httpHeaders.set("Authorization", "Token " + daDataSettings.getToken());
         final HttpEntity<T> httpEntity = new HttpEntity<>(body, httpHeaders);
         try {
-            log.info("Send DaData request to {}", url.toString());
             return restTemplate.postForEntity(url, httpEntity, responseType);
         } catch (Exception e) {
             log.error("Request exception", e);

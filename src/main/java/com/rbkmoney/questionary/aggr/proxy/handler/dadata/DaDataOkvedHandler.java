@@ -29,23 +29,27 @@ public class DaDataOkvedHandler extends AbstractDaDataHandler {
             throw new IllegalArgumentException("Need to specify okved query");
         }
         final OkvedQuery okvedQuery = request.getOkvedQuery();
-        log.info("OkvedQuery: {}", okvedQuery);
+        log.info("Convert okvedQuery to request obj: {}", okvedQuery);
         final DaDataQuery daDataQuery = DaDataQueryMapper.toQuery(okvedQuery);
-        log.info("OkvedQuery after converting: {}", daDataQuery);
+        log.info("Converted okvedQuery: {}", daDataQuery);
         ResponseEntity<String> responseEntity = null;
 
         if (!okvedQuery.isSetQueryType()) {
+            log.info("Query type not specified. 'Full text search' will be used");
             okvedQuery.setQueryType(QueryType.FULL_TEXT_SEARCH);
         }
 
         if (okvedQuery.getQueryType() == QueryType.FULL_TEXT_SEARCH) {
+            log.info("Perform Okved request");
             responseEntity = daDataApi.okvedRequest(daDataQuery);
         } else if (okvedQuery.getQueryType() == QueryType.BY_INDENTIFIRE) {
+            log.info("Perform Okved by id request");
             responseEntity = daDataApi.okvedByIdRequest(daDataQuery);
         } else {
             throw new DaDataRequestException("Unknown request type: " + okvedQuery.getQueryType());
         }
 
+        log.info("Read DaData okved response");
         final OkvedResponseWrapper okvedResponseWrapper = getObjectMapper().readValue(responseEntity.getBody(), OkvedResponseWrapper.class);
         final List<OkvedContent> okvedContentList = okvedResponseWrapper.getOkvedContentWrapperList().stream()
                 .map(OkvedContentWrapper::getOkvedContent)

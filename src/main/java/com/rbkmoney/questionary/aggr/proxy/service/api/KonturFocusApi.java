@@ -69,7 +69,6 @@ public class KonturFocusApi {
         headers.setContentType(MediaType.APPLICATION_JSON);
         final HttpEntity<?> entity = new HttpEntity<>(headers);
         try {
-            log.info("Send KonturFocus request to: {}", uri.toString());
             return restTemplate.exchange(uri, HttpMethod.GET, entity, responseType);
         } catch (Exception e) {
             log.error("Request exception", e);

@@ -9,23 +9,16 @@ import com.rbkmoney.questionary_proxy_aggr.base_dadata.*;
 import com.rbkmoney.questionary_proxy_aggr.dadata_address.Address;
 import com.rbkmoney.questionary_proxy_aggr.dadata_address.AddressResponse;
 import com.rbkmoney.questionary_proxy_aggr.dadata_bank.BankContent;
-import com.rbkmoney.questionary_proxy_aggr.dadata_bank.BankResponse;
 import com.rbkmoney.questionary_proxy_aggr.dadata_fio.FioContent;
-import com.rbkmoney.questionary_proxy_aggr.dadata_fio.FioResponse;
 import com.rbkmoney.questionary_proxy_aggr.dadata_fms_unit.FmsUnitContent;
-import com.rbkmoney.questionary_proxy_aggr.dadata_fms_unit.FmsUnitResponse;
 import com.rbkmoney.questionary_proxy_aggr.dadata_okved2.OkvedContent;
-import com.rbkmoney.questionary_proxy_aggr.dadata_okved2.OkvedResponse;
 import com.rbkmoney.questionary_proxy_aggr.dadata_party.PartyContent;
-import com.rbkmoney.questionary_proxy_aggr.dadata_party.PartyResponse;
 import org.apache.thrift.TException;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 import java.io.IOException;
-import java.util.List;
-import java.util.stream.Collectors;
 
 public class DaDataDeserializationTest {
 
@@ -73,11 +66,11 @@ public class DaDataDeserializationTest {
         Assert.assertEquals("Греф Герман Оскарович", partyContent.getManagement().getName());
         Assert.assertEquals("ПРЕЗИДЕНТ, ПРЕДСЕДАТЕЛЬ ПРАВЛЕНИЯ", partyContent.getManagement().getPost());
         Assert.assertEquals("MAIN", partyContent.getBranchType().name());
-        Assert.assertEquals(89, partyContent.getBranchCount());
+        Assert.assertEquals(88, partyContent.getBranchCount());
         Assert.assertEquals("145a83ab38c9ad95889a7b894ce57a97cf6f6d5f42932a71331ff18606edecc6", partyContent.getHid());
         Assert.assertEquals("LEGAL", partyContent.getType().name());
         Assert.assertEquals("ACTIVE", partyContent.getState().getStatus().name());
-        Assert.assertEquals("2019-05-23T03:00", partyContent.getState().getActualityDate());
+        Assert.assertEquals("2019-09-10T03:00", partyContent.getState().getActualityDate());
         Assert.assertEquals("1991-06-20T03:00", partyContent.getState().getRegistrationDate());
         Assert.assertEquals("2014", partyContent.getOpf().getType());
         Assert.assertEquals("12247", partyContent.getOpf().getCode());

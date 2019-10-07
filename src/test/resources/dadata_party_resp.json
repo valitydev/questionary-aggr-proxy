@@ -8,19 +8,20 @@
         "capital": null,
         "management": {
           "name": "Греф Герман Оскарович",
-          "post": "ПРЕЗИДЕНТ, ПРЕДСЕДАТЕЛЬ ПРАВЛЕНИЯ"
+          "post": "ПРЕЗИДЕНТ, ПРЕДСЕДАТЕЛЬ ПРАВЛЕНИЯ",
+          "disqualified": null
         },
         "founders": null,
         "managers": null,
         "branch_type": "MAIN",
-        "branch_count": 89,
+        "branch_count": 88,
         "source": null,
         "qc": null,
         "hid": "145a83ab38c9ad95889a7b894ce57a97cf6f6d5f42932a71331ff18606edecc6",
         "type": "LEGAL",
         "state": {
           "status": "ACTIVE",
-          "actuality_date": 1558569600000,
+          "actuality_date": 1568073600000,
           "registration_date": 677376000000,
           "liquidation_date": null
         },
@@ -45,14 +46,18 @@
         "authorities": null,
         "documents": null,
         "licenses": null,
+        "finance": null,
         "address": {
           "value": "г Москва, ул Вавилова, д 19",
           "unrestricted_value": "г Москва, Академический р-н, ул Вавилова, д 19",
           "data": {
             "postal_code": "117312",
             "country": "Россия",
+            "country_iso_code": "RU",
+            "federal_district": "Центральный",
             "region_fias_id": "0c5b2444-70a0-4932-980c-b4dc0d3f02b5",
             "region_kladr_id": "7700000000000",
+            "region_iso_code": "RU-MOW",
             "region_with_type": "г Москва",
             "region_type": "г",
             "region_type_full": "город",
@@ -148,7 +153,8 @@
         "phones": null,
         "emails": null,
         "ogrn_date": 1029456000000,
-        "okved_type": "2014"
+        "okved_type": "2014",
+        "employee_count": null
       }
     },
     {
@@ -159,7 +165,8 @@
         "capital": null,
         "management": {
           "name": "Зарецкий Александр Михайлович",
-          "post": "ГЕНЕРАЛЬНЫЙ ДИРЕКТОР"
+          "post": "ГЕНЕРАЛЬНЫЙ ДИРЕКТОР",
+          "disqualified": null
         },
         "founders": null,
         "managers": null,
@@ -196,14 +203,18 @@
         "authorities": null,
         "documents": null,
         "licenses": null,
+        "finance": null,
         "address": {
           "value": "г Москва, ул Шаболовка, д 31Г",
           "unrestricted_value": "г Москва, Донской р-н, ул Шаболовка, д 31Г",
           "data": {
             "postal_code": "115162",
             "country": "Россия",
+            "country_iso_code": null,
+            "federal_district": null,
             "region_fias_id": "0c5b2444-70a0-4932-980c-b4dc0d3f02b5",
             "region_kladr_id": "7700000000000",
+            "region_iso_code": null,
             "region_with_type": "г Москва",
             "region_type": "г",
             "region_type_full": "город",
@@ -299,7 +310,8 @@
         "phones": null,
         "emails": null,
         "ogrn_date": 1402358400000,
-        "okved_type": "2014"
+        "okved_type": "2014",
+        "employee_count": null
       }
     },
     {
@@ -310,7 +322,8 @@
         "capital": null,
         "management": {
           "name": "Андреев Николай Юрьевич",
-          "post": "ГЕНЕРАЛЬНЫЙ ДИРЕКТОР"
+          "post": "ГЕНЕРАЛЬНЫЙ ДИРЕКТОР",
+          "disqualified": null
         },
         "founders": null,
         "managers": null,
@@ -347,14 +360,24 @@
         "authorities": null,
         "documents": null,
         "licenses": null,
+        "finance": {
+          "tax_system": null,
+          "income": null,
+          "expense": null,
+          "debt": null,
+          "penalty": null
+        },
         "address": {
           "value": "г Москва, ул Новослободская, д 24 стр 2",
           "unrestricted_value": "г Москва, Тверской р-н, ул Новослободская, д 24 стр 2",
           "data": {
             "postal_code": "127055",
             "country": "Россия",
+            "country_iso_code": null,
+            "federal_district": null,
             "region_fias_id": "0c5b2444-70a0-4932-980c-b4dc0d3f02b5",
             "region_kladr_id": "7700000000000",
+            "region_iso_code": null,
             "region_with_type": "г Москва",
             "region_type": "г",
             "region_type_full": "город",
@@ -435,7 +458,7 @@
               {
                 "name": "Достоевская",
                 "line": "Люблинско-Дмитровская",
-                "distance": 1
+                "distance": 1.0
               }
             ],
             "qc_geo": "1",
@@ -450,7 +473,8 @@
         "phones": null,
         "emails": null,
         "ogrn_date": 1027036800000,
-        "okved_type": "2014"
+        "okved_type": "2014",
+        "employee_count": null
       }
     },
     {
@@ -461,7 +485,8 @@
         "capital": null,
         "management": {
           "name": "Алтухов Константин Николаевич",
-          "post": "ПРЕЗИДЕНТ"
+          "post": "ПРЕЗИДЕНТ",
+          "disqualified": null
         },
         "founders": null,
         "managers": null,
@@ -473,7 +498,7 @@
         "type": "LEGAL",
         "state": {
           "status": "ACTIVE",
-          "actuality_date": 1553385600000,
+          "actuality_date": 1561852800000,
           "registration_date": 732499200000,
           "liquidation_date": null
         },
@@ -498,14 +523,18 @@
         "authorities": null,
         "documents": null,
         "licenses": null,
+        "finance": null,
         "address": {
           "value": "г Москва, ул Вавилова, д 19",
           "unrestricted_value": "г Москва, Академический р-н, ул Вавилова, д 19",
           "data": {
             "postal_code": "117312",
             "country": "Россия",
+            "country_iso_code": null,
+            "federal_district": "Центральный",
             "region_fias_id": "0c5b2444-70a0-4932-980c-b4dc0d3f02b5",
             "region_kladr_id": "7700000000000",
+            "region_iso_code": null,
             "region_with_type": "г Москва",
             "region_type": "г",
             "region_type_full": "город",
@@ -601,7 +630,8 @@
         "phones": null,
         "emails": null,
         "ogrn_date": 1027296000000,
-        "okved_type": "2014"
+        "okved_type": "2014",
+        "employee_count": null
       }
     },
     {
@@ -612,19 +642,20 @@
         "capital": null,
         "management": {
           "name": "Спиров Вячеслав Юрьевич",
-          "post": "ГЕНЕРАЛЬНЫЙ ДИРЕКТОР"
+          "post": "ГЕНЕРАЛЬНЫЙ ДИРЕКТОР",
+          "disqualified": null
         },
         "founders": null,
         "managers": null,
         "branch_type": "MAIN",
-        "branch_count": 64,
+        "branch_count": 63,
         "source": null,
         "qc": null,
         "hid": "ac7cbedea719316f5b9cdbab87640dbf50590dc245ea0ca326cb7872ac141d30",
         "type": "LEGAL",
         "state": {
           "status": "ACTIVE",
-          "actuality_date": 1558742400000,
+          "actuality_date": 1568505600000,
           "registration_date": 745545600000,
           "liquidation_date": null
         },
@@ -649,14 +680,18 @@
         "authorities": null,
         "documents": null,
         "licenses": null,
+        "finance": null,
         "address": {
-          "value": "Московская обл, г Одинцово, б-р Маршала Крылова, д 25А, пом 12",
-          "unrestricted_value": "Московская обл, Одинцовский р-н, г Одинцово, б-р Маршала Крылова, д 25А, пом 12",
+          "value": "143026, ОБЛАСТЬ МОСКОВСКАЯ, РАЙОН ОДИНЦОВСКИЙ, РАБОЧИЙ ПОСЕЛОК НОВОИВАНОВСКОЕ, ШОССЕ МОЖАЙСКОЕ, ВЛАДЕНИЕ 165, ПОМЕЩЕНИЕ 3.1",
+          "unrestricted_value": "143026, ОБЛАСТЬ МОСКОВСКАЯ, РАЙОН ОДИНЦОВСКИЙ, РАБОЧИЙ ПОСЕЛОК НОВОИВАНОВСКОЕ, ШОССЕ МОЖАЙСКОЕ, ВЛАДЕНИЕ 165, ПОМЕЩЕНИЕ 3.1",
           "data": {
-            "postal_code": "143005",
+            "postal_code": "143026",
             "country": "Россия",
+            "country_iso_code": "RU",
+            "federal_district": "Центральный",
             "region_fias_id": "29251dcf-00a1-4e34-98d4-5c47484a36d4",
             "region_kladr_id": "5000000000000",
+            "region_iso_code": "RU-MOS",
             "region_with_type": "Московская обл",
             "region_type": "обл",
             "region_type_full": "область",
@@ -667,12 +702,12 @@
             "area_type": "р-н",
             "area_type_full": "район",
             "area": "Одинцовский",
-            "city_fias_id": "6ae8ad9e-aa6c-4849-92d8-8e637059c9b0",
-            "city_kladr_id": "5002200100000",
-            "city_with_type": "г Одинцово",
-            "city_type": "г",
-            "city_type_full": "город",
-            "city": "Одинцово",
+            "city_fias_id": null,
+            "city_kladr_id": null,
+            "city_with_type": null,
+            "city_type": null,
+            "city_type_full": null,
+            "city": null,
             "city_area": null,
             "city_district_fias_id": null,
             "city_district_kladr_id": null,
@@ -680,63 +715,80 @@
             "city_district_type": null,
             "city_district_type_full": null,
             "city_district": null,
-            "settlement_fias_id": null,
-            "settlement_kladr_id": null,
-            "settlement_with_type": null,
-            "settlement_type": null,
-            "settlement_type_full": null,
-            "settlement": null,
-            "street_fias_id": "63e0eded-ef9f-4771-954c-035b021ea2e4",
-            "street_kladr_id": "50022001000001400",
-            "street_with_type": "б-р Маршала Крылова",
-            "street_type": "б-р",
-            "street_type_full": "бульвар",
-            "street": "Маршала Крылова",
-            "house_fias_id": "1b385f71-95ee-4cf8-b398-145de1b5e4c5",
-            "house_kladr_id": "5002200100000140129",
-            "house_type": "д",
-            "house_type_full": "дом",
-            "house": "25А",
+            "settlement_fias_id": "fff5ca62-e335-4019-a399-a1386721b5c3",
+            "settlement_kladr_id": "5002200014000",
+            "settlement_with_type": "рп Новоивановское",
+            "settlement_type": "рп",
+            "settlement_type_full": "рабочий поселок",
+            "settlement": "Новоивановское",
+            "street_fias_id": "465de2cf-ba66-48b5-8bb7-a5e5c61c6512",
+            "street_kladr_id": "50022000140000200",
+            "street_with_type": "Можайское шоссе",
+            "street_type": "ш",
+            "street_type_full": "шоссе",
+            "street": "Можайское",
+            "house_fias_id": null,
+            "house_kladr_id": null,
+            "house_type": "влд",
+            "house_type_full": "владение",
+            "house": "165",
             "block_type": null,
             "block_type_full": null,
             "block": null,
             "flat_type": "пом",
             "flat_type_full": "помещение",
-            "flat": "12",
+            "flat": "3",
             "flat_area": null,
-            "square_meter_price": "115697",
+            "square_meter_price": null,
             "flat_price": null,
             "postal_box": null,
-            "fias_id": "1b385f71-95ee-4cf8-b398-145de1b5e4c5",
-            "fias_code": "50022001000000000140129",
-            "fias_level": "8",
+            "fias_id": "465de2cf-ba66-48b5-8bb7-a5e5c61c6512",
+            "fias_code": "50022000140000000020000",
+            "fias_level": "7",
             "fias_actuality_state": "0",
-            "kladr_id": "5002200100000140129",
+            "kladr_id": "50022000140000200",
             "geoname_id": null,
-            "capital_marker": "1",
-            "okato": "46241501000",
-            "oktmo": "46641101001",
+            "capital_marker": "0",
+            "okato": "46241562000",
+            "oktmo": "46641162051",
             "tax_office": "5032",
             "tax_office_legal": "5032",
             "timezone": "UTC+3",
-            "geo_lat": "55.6883155",
-            "geo_lon": "37.3010225",
+            "geo_lat": "55.7086817",
+            "geo_lon": "37.3821861",
             "beltway_hit": "OUT_MKAD",
-            "beltway_distance": "7",
-            "metro": null,
-            "qc_geo": "1",
+            "beltway_distance": "1",
+            "metro": [
+              {
+                "name": "Молодёжная",
+                "line": "Арбатско-Покровская",
+                "distance": 4.2
+              },
+              {
+                "name": "Кунцевская",
+                "line": "Арбатско-Покровская",
+                "distance": 4.6
+              },
+              {
+                "name": "Кунцевская",
+                "line": "Филёвская",
+                "distance": 4.7
+              }
+            ],
+            "qc_geo": "0",
             "qc_complete": null,
             "qc_house": null,
             "history_values": null,
             "unparsed_parts": null,
-            "source": "143005, ОБЛАСТЬ МОСКОВСКАЯ, РАЙОН ОДИНЦОВСКИЙ, ГОРОД ОДИНЦОВО, БУЛЬВАР МАРШАЛА КРЫЛОВА, ДОМ 25А, ПОМЕЩЕНИЕ 12",
-            "qc": "0"
+            "source": "143026, ОБЛАСТЬ МОСКОВСКАЯ, РАЙОН ОДИНЦОВСКИЙ, РАБОЧИЙ ПОСЕЛОК НОВОИВАНОВСКОЕ, ШОССЕ МОЖАЙСКОЕ, ВЛАДЕНИЕ 165, ПОМЕЩЕНИЕ 3.1",
+            "qc": "1"
           }
         },
         "phones": null,
         "emails": null,
         "ogrn_date": 1026345600000,
-        "okved_type": "2014"
+        "okved_type": "2014",
+        "employee_count": null
       }
     },
     {
@@ -747,7 +799,8 @@
         "capital": null,
         "management": {
           "name": "Зайцев Евгений Юрьевич",
-          "post": "ГЕНЕРАЛЬНЫЙ ДИРЕКТОР"
+          "post": "ГЕНЕРАЛЬНЫЙ ДИРЕКТОР",
+          "disqualified": null
         },
         "founders": null,
         "managers": null,
@@ -759,7 +812,7 @@
         "type": "LEGAL",
         "state": {
           "status": "ACTIVE",
-          "actuality_date": 1554508800000,
+          "actuality_date": 1568505600000,
           "registration_date": 828316800000,
           "liquidation_date": null
         },
@@ -784,14 +837,18 @@
         "authorities": null,
         "documents": null,
         "licenses": null,
+        "finance": null,
         "address": {
           "value": "г Москва, Пресненская наб, д 8 стр 1",
           "unrestricted_value": "г Москва, Пресненский р-н, Пресненская наб, д 8 стр 1",
           "data": {
             "postal_code": "123112",
             "country": "Россия",
+            "country_iso_code": "RU",
+            "federal_district": "Центральный",
             "region_fias_id": "0c5b2444-70a0-4932-980c-b4dc0d3f02b5",
             "region_kladr_id": "7700000000000",
+            "region_iso_code": "RU-MOW",
             "region_with_type": "г Москва",
             "region_type": "г",
             "region_type_full": "город",
@@ -887,7 +944,8 @@
         "phones": null,
         "emails": null,
         "ogrn_date": 1027296000000,
-        "okved_type": "2014"
+        "okved_type": "2014",
+        "employee_count": null
       }
     },
     {
@@ -898,7 +956,8 @@
         "capital": null,
         "management": {
           "name": "Малыгин Евгений Михайлович",
-          "post": "ГЕНЕРАЛЬНЫЙ ДИРЕКТОР"
+          "post": "ГЕНЕРАЛЬНЫЙ ДИРЕКТОР",
+          "disqualified": null
         },
         "founders": null,
         "managers": null,
@@ -935,14 +994,24 @@
         "authorities": null,
         "documents": null,
         "licenses": null,
+        "finance": {
+          "tax_system": null,
+          "income": null,
+          "expense": null,
+          "debt": null,
+          "penalty": null
+        },
         "address": {
           "value": "Московская обл, г Одинцово, ул Молодежная, д 46",
           "unrestricted_value": "Московская обл, Одинцовский р-н, г Одинцово, ул Молодежная, д 46",
           "data": {
             "postal_code": "143007",
             "country": "Россия",
+            "country_iso_code": null,
+            "federal_district": null,
             "region_fias_id": "29251dcf-00a1-4e34-98d4-5c47484a36d4",
             "region_kladr_id": "5000000000000",
+            "region_iso_code": null,
             "region_with_type": "Московская обл",
             "region_type": "обл",
             "region_type_full": "область",
@@ -1022,7 +1091,8 @@
         "phones": null,
         "emails": null,
         "ogrn_date": 1286755200000,
-        "okved_type": "2014"
+        "okved_type": "2014",
+        "employee_count": null
       }
     },
     {
@@ -1033,7 +1103,8 @@
         "capital": null,
         "management": {
           "name": "Хачатурянц Ашот Рафаилович",
-          "post": "ГЕНЕРАЛЬНЫЙ ДИРЕКТОР"
+          "post": "ГЕНЕРАЛЬНЫЙ ДИРЕКТОР",
+          "disqualified": null
         },
         "founders": null,
         "managers": null,
@@ -1070,14 +1141,24 @@
         "authorities": null,
         "documents": null,
         "licenses": null,
+        "finance": {
+          "tax_system": null,
+          "income": null,
+          "expense": null,
+          "debt": null,
+          "penalty": null
+        },
         "address": {
           "value": "г Москва, ул Вавилова, д 19",
           "unrestricted_value": "г Москва, Академический р-н, ул Вавилова, д 19",
           "data": {
             "postal_code": "117312",
             "country": "Россия",
+            "country_iso_code": null,
+            "federal_district": null,
             "region_fias_id": "0c5b2444-70a0-4932-980c-b4dc0d3f02b5",
             "region_kladr_id": "7700000000000",
+            "region_iso_code": null,
             "region_with_type": "г Москва",
             "region_type": "г",
             "region_type_full": "город",
@@ -1173,7 +1254,8 @@
         "phones": null,
         "emails": null,
         "ogrn_date": 1217203200000,
-        "okved_type": "2014"
+        "okved_type": "2014",
+        "employee_count": null
       }
     },
     {
@@ -1184,7 +1266,8 @@
         "capital": null,
         "management": {
           "name": "Евтушенко Алексей Юрьевич",
-          "post": "ГЕНЕРАЛЬНЫЙ ДИРЕКТОР"
+          "post": "ГЕНЕРАЛЬНЫЙ ДИРЕКТОР",
+          "disqualified": null
         },
         "founders": null,
         "managers": null,
@@ -1221,14 +1304,24 @@
         "authorities": null,
         "documents": null,
         "licenses": null,
+        "finance": {
+          "tax_system": null,
+          "income": null,
+          "expense": null,
+          "debt": null,
+          "penalty": null
+        },
         "address": {
           "value": "г Москва, ул Вавилова, д 19",
           "unrestricted_value": "г Москва, Академический р-н, ул Вавилова, д 19",
           "data": {
             "postal_code": "117312",
             "country": "Россия",
+            "country_iso_code": null,
+            "federal_district": null,
             "region_fias_id": "0c5b2444-70a0-4932-980c-b4dc0d3f02b5",
             "region_kladr_id": "7700000000000",
+            "region_iso_code": null,
             "region_with_type": "г Москва",
             "region_type": "г",
             "region_type_full": "город",
@@ -1324,7 +1417,8 @@
         "phones": null,
         "emails": null,
         "ogrn_date": 1375920000000,
-        "okved_type": "2014"
+        "okved_type": "2014",
+        "employee_count": null
       }
     },
     {
@@ -1335,7 +1429,8 @@
         "capital": null,
         "management": {
           "name": "Гурджиян Руслан Валерьевич",
-          "post": "ГЕНЕРАЛЬНЫЙ ДИРЕКТОР"
+          "post": "ГЕНЕРАЛЬНЫЙ ДИРЕКТОР",
+          "disqualified": null
         },
         "founders": null,
         "managers": null,
@@ -1347,7 +1442,7 @@
         "type": "LEGAL",
         "state": {
           "status": "ACTIVE",
-          "actuality_date": 1552694400000,
+          "actuality_date": 1567036800000,
           "registration_date": 1459123200000,
           "liquidation_date": null
         },
@@ -1372,14 +1467,18 @@
         "authorities": null,
         "documents": null,
         "licenses": null,
+        "finance": null,
         "address": {
           "value": "г Москва, ул Вавилова, д 19",
           "unrestricted_value": "г Москва, Академический р-н, ул Вавилова, д 19",
           "data": {
             "postal_code": "117312",
             "country": "Россия",
+            "country_iso_code": "RU",
+            "federal_district": "Центральный",
             "region_fias_id": "0c5b2444-70a0-4932-980c-b4dc0d3f02b5",
             "region_kladr_id": "7700000000000",
+            "region_iso_code": "RU-MOW",
             "region_with_type": "г Москва",
             "region_type": "г",
             "region_type_full": "город",
@@ -1475,7 +1574,8 @@
         "phones": null,
         "emails": null,
         "ogrn_date": 1459123200000,
-        "okved_type": "2014"
+        "okved_type": "2014",
+        "employee_count": null
       }
     }
   ]

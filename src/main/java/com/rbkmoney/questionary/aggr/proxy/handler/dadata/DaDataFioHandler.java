@@ -27,10 +27,11 @@ public class DaDataFioHandler extends AbstractDaDataHandler {
             throw new IllegalArgumentException("Need to specify fio query");
         }
         final FioQuery fioQuery = request.getFioQuery();
-        log.info("FioQuery: {}", fioQuery);
+        log.info("Convert fioQuery to request obj: {}", fioQuery);
         final DaDataQuery daDataQuery = DaDataQueryMapper.toQuery(fioQuery);
-        log.info("FioQuery after converting: {}", daDataQuery);
+        log.info("Converted fioQuery: {}", daDataQuery);
         final ResponseEntity<String> responseEntity = daDataApi.fioRequest(daDataQuery);
+        log.info("Read DaData fio response");
         final FioResponseWrapper fioResponseWrapper = getObjectMapper().readValue(responseEntity.getBody(), FioResponseWrapper.class);
         final List<FioContent> fioContents = fioResponseWrapper.getFioContentWrapperList().stream()
                 .map(FioContentWrapper::getFioContent)

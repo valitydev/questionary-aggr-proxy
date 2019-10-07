@@ -1,9 +1,6 @@
 package com.rbkmoney.questionary.aggr.proxy.service;
 
-import com.rbkmoney.damsel.questionary_proxy_aggr.DaDataRequestException;
-import com.rbkmoney.damsel.questionary_proxy_aggr.KonturFocusRequestException;
 import com.rbkmoney.questionary.aggr.proxy.TestResponse;
-import com.rbkmoney.questionary.aggr.proxy.handler.dadata.DaDataHandlerException;
 import com.rbkmoney.questionary.aggr.proxy.service.api.DaDataApi;
 import com.rbkmoney.questionary.aggr.proxy.service.api.KonturFocusApi;
 import com.rbkmoney.questionary.aggr.proxy.service.api.model.DaDataQuery;
@@ -16,6 +13,7 @@ import com.rbkmoney.questionary_proxy_aggr.dadata_bank.BankQuery;
 import com.rbkmoney.questionary_proxy_aggr.dadata_fio.FioQuery;
 import com.rbkmoney.questionary_proxy_aggr.dadata_fms_unit.FmsUnitQuery;
 import com.rbkmoney.questionary_proxy_aggr.dadata_okved2.OkvedQuery;
+import com.rbkmoney.questionary_proxy_aggr.dadata_party.PartyQuery;
 import com.rbkmoney.questionary_proxy_aggr.kontur_focus_api.KonturFocusEndPoint;
 import com.rbkmoney.questionary_proxy_aggr.kontur_focus_api.KonturFocusRequest;
 import com.rbkmoney.questionary_proxy_aggr.kontur_focus_api.KonturFocusResponse;
@@ -94,6 +92,17 @@ public class AggregatorProxyServiceTest {
         final KonturFocusResponse konturFocusResponse = aggregatorProxyService.requestKonturFocus(konturFocusRequest, KonturFocusEndPoint.licences);
         verify(konturFocusApiMock, atLeastOnce()).licenseRequest(anyList(), anyList());
         Assert.assertNotNull(konturFocusResponse);
+    }
+
+    @Test
+    public void daDataPartyRequestTest() throws TException {
+        final ResponseEntity<String> responseEntity = new ResponseEntity<>(TestResponse.daDataParty(), HttpStatus.OK);
+        when(daDataApiMock.partyRequest(any(DaDataQuery.class))).thenReturn(responseEntity);
+        DaDataRequest daDataRequest = new DaDataRequest();
+        daDataRequest.setPartyQuery(new PartyQuery());
+        DaDataResponse daDataResponse = aggregatorProxyService.requestDaData(daDataRequest, DaDataEndpoint.suggest_party);
+        verify(daDataApiMock, atLeastOnce()).partyRequest(any(DaDataQuery.class));
+        Assert.assertNotNull(daDataResponse);
     }
 
     @Test

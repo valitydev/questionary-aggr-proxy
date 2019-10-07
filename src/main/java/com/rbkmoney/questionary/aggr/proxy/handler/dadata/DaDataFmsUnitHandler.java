@@ -29,9 +29,7 @@ public class DaDataFmsUnitHandler extends AbstractDaDataHandler {
             throw new IllegalArgumentException("Need to specify fms unit query");
         }
         final FmsUnitQuery fmsUnitQuery = request.getFmsUnitQuery();
-        log.info("FmsUnitQuery: {}", fmsUnitQuery);
         final DaDataQuery dataQuery = DaDataQueryMapper.toQuery(fmsUnitQuery);
-        log.info("FmsUnitQuery after converting: {}", dataQuery);
         ResponseEntity<String> responseEntity = null;
 
         if (!fmsUnitQuery.isSetQueryType()) {
