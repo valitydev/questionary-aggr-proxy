@@ -31,12 +31,12 @@ public class DaDataDeserializationTest {
     }
 
     @Test
-    public void daDataAddressDeserializerTest() throws IOException {
+    public void daDataAddressDeserializerTest() throws IOException, TException {
         final SimpleModule simpleModule = new SimpleModule();
         simpleModule.addDeserializer(Address.class, new DaDataAddressDeserializer());
         objectMapper.registerModule(simpleModule);
         final AddressResponse addressResponse = objectMapper.readValue(TestResponse.daDataAddress(), AddressResponse.class);
-        Assert.assertEquals(15, addressResponse.getSuggestions().size());
+        Assert.assertEquals(10, addressResponse.getSuggestions().size());
         final Address address = addressResponse.getSuggestions().get(0);
         Assert.assertEquals("г Москва, ул Хабаровская", address.getValue());
         Assert.assertEquals("г Москва, ул Хабаровская", address.getUnrestrictedValue());
@@ -86,7 +86,7 @@ public class DaDataDeserializationTest {
     }
 
     @Test
-    public void daDataBankDeserializerTest() throws IOException {
+    public void daDataBankDeserializerTest() throws IOException, TException {
         final SimpleModule simpleModule = new SimpleModule();
         simpleModule.addDeserializer(BankContent.class, new DaDataBankDeserializer());
         simpleModule.addDeserializer(DaDataState.class, new DaDataStateDeserializer());
@@ -101,7 +101,7 @@ public class DaDataDeserializationTest {
         Assert.assertEquals("ПАО СБЕРБАНК", bankContent.getPayment().getName());
         Assert.assertEquals("СБЕРБАНК РОССИИ", bankContent.getPayment().getShortName());
         Assert.assertEquals("044525225", bankContent.getBic());
-        Assert.assertEquals("SABRRUMMXXX", bankContent.getSwift());
+        Assert.assertEquals("SABRRUMM", bankContent.getSwift());
         Assert.assertEquals("30101810400000000225", bankContent.getCorrespondentAccount());
         Assert.assertEquals("1481", bankContent.getRegistrationNumber());
     }
@@ -152,7 +152,5 @@ public class DaDataDeserializationTest {
         Assert.assertEquals("08.99.2", okvedContent.getCode());
         Assert.assertEquals("Добыча абразивных материалов, асбеста, кремнеземистой каменной муки, природных графитов," +
                 " мыльного камня (талька), полевого шпата и т. д.", okvedContent.getName());
-
-
     }
 }

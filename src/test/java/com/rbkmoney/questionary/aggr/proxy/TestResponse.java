@@ -2,12 +2,10 @@ package com.rbkmoney.questionary.aggr.proxy;
 
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
-import org.apache.tomcat.util.http.fileupload.IOUtils;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.nio.charset.Charset;
 import java.nio.charset.StandardCharsets;
 import java.util.Objects;
 
@@ -42,12 +40,24 @@ public class TestResponse {
         return decode(loadFile("kf_egrDetails_resp.json"));
     }
 
+    public static String kfEgrDetailsLegal() {
+        return decode(loadFile("kf_egrDetails_legal_resp.json"));
+    }
+
     public static String kfReqResp() {
         return decode(loadFile("kf_req_resp.json"));
     }
 
+    public static String kfReqLegalResp() {
+        return decode(loadFile("kf_req_legal_resp.json"));
+    }
+
     public static String kfLicenseResp() {
         return decode(loadFile("kf_license_resp.json"));
+    }
+
+    public static String kfBeneficialOwnerResp() {
+        return decode(loadFile("kf_beneficial_owner_resp.json"));
     }
 
     private static String decode(byte[] bytes) {

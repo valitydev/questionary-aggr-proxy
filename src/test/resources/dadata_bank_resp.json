@@ -15,10 +15,17 @@
           "short": "СБЕРБАНК РОССИИ"
         },
         "bic": "044525225",
-        "swift": "SABRRUMMXXX",
+        "swift": "SABRRUMM",
         "okpo": null,
         "correspondent_account": "30101810400000000225",
         "registration_number": "1481",
+        "payment_city": "г. Москва",
+        "state": {
+          "status": "ACTIVE",
+          "actuality_date": 1570321104000,
+          "registration_date": 677376000000,
+          "liquidation_date": null
+        },
         "rkc": null,
         "address": {
           "value": "г Москва, ул Вавилова, д 19",
@@ -26,8 +33,11 @@
           "data": {
             "postal_code": "117312",
             "country": "Россия",
+            "country_iso_code": "RU",
+            "federal_district": "Центральный",
             "region_fias_id": "0c5b2444-70a0-4932-980c-b4dc0d3f02b5",
             "region_kladr_id": "7700000000000",
+            "region_iso_code": "RU-MOW",
             "region_with_type": "г Москва",
             "region_type": "г",
             "region_type_full": "город",
@@ -116,17 +126,11 @@
             "qc_house": "2",
             "history_values": null,
             "unparsed_parts": null,
-            "source": "117997, Москва, ул Вавилова, 19",
+            "source": "117997, г. Москва, ул Вавилова, 19",
             "qc": "0"
           }
         },
-        "phones": null,
-        "state": {
-          "status": "ACTIVE",
-          "actuality_date": 1558915200000,
-          "registration_date": 677376000000,
-          "liquidation_date": null
-        }
+        "phones": null
       }
     },
     {
@@ -148,6 +152,13 @@
         "okpo": null,
         "correspondent_account": "30101810900000000607",
         "registration_number": "1481/422",
+        "payment_city": "г. Иркутск",
+        "state": {
+          "status": "ACTIVE",
+          "actuality_date": 1570321104000,
+          "registration_date": null,
+          "liquidation_date": null
+        },
         "rkc": null,
         "address": {
           "value": "г Иркутск, ул Нижняя Набережная, д 10",
@@ -155,8 +166,11 @@
           "data": {
             "postal_code": "664011",
             "country": "Россия",
+            "country_iso_code": "RU",
+            "federal_district": "Сибирский",
             "region_fias_id": "6466c988-7ce3-45e5-8b97-90ae16cb1249",
             "region_kladr_id": "3800000000000",
+            "region_iso_code": "RU-IRK",
             "region_with_type": "Иркутская обл",
             "region_type": "обл",
             "region_type_full": "область",
@@ -229,17 +243,11 @@
             "qc_house": "2",
             "history_values": null,
             "unparsed_parts": null,
-            "source": "664011, Иркутск, ул Н. Набережная, 10",
+            "source": "664011, г. Иркутск, ул Н. Набережная, 10",
             "qc": "0"
           }
         },
-        "phones": null,
-        "state": {
-          "status": "ACTIVE",
-          "actuality_date": 1558915200000,
-          "registration_date": null,
-          "liquidation_date": null
-        }
+        "phones": null
       }
     },
     {
@@ -257,19 +265,29 @@
           "short": null
         },
         "bic": "040813608",
-        "swift": "SABRRU8KVLD",
+        "swift": "SABRRU8KXXX",
         "okpo": null,
         "correspondent_account": "30101810600000000608",
         "registration_number": "1481/1654",
+        "payment_city": "г. Хабаровск",
+        "state": {
+          "status": "ACTIVE",
+          "actuality_date": 1570321104000,
+          "registration_date": null,
+          "liquidation_date": null
+        },
         "rkc": null,
         "address": {
           "value": "г Хабаровск, ул Гамарника, д 12",
           "unrestricted_value": "Хабаровский край, г Хабаровск, Центральный р-н, ул Гамарника, д 12",
           "data": {
-            "postal_code": "680030",
+            "postal_code": "680020",
             "country": "Россия",
+            "country_iso_code": "RU",
+            "federal_district": "Дальневосточный",
             "region_fias_id": "7d468b39-1afa-41ec-8c4f-97a8603cb3d4",
             "region_kladr_id": "2700000000000",
+            "region_iso_code": "RU-KHA",
             "region_with_type": "Хабаровский край",
             "region_type": "край",
             "region_type_full": "край",
@@ -342,17 +360,11 @@
             "qc_house": "2",
             "history_values": null,
             "unparsed_parts": null,
-            "source": "680020, Хабаровск, ул Гамарника, 12",
+            "source": "680020, г. Хабаровск, ул Гамарника, 12",
             "qc": "0"
           }
         },
-        "phones": null,
-        "state": {
-          "status": "ACTIVE",
-          "actuality_date": 1558915200000,
-          "registration_date": null,
-          "liquidation_date": null
-        }
+        "phones": null
       }
     },
     {
@@ -374,6 +386,13 @@
         "okpo": null,
         "correspondent_account": "30101810200000000607",
         "registration_number": "1481/1258",
+        "payment_city": "г. Самара",
+        "state": {
+          "status": "ACTIVE",
+          "actuality_date": 1570321104000,
+          "registration_date": null,
+          "liquidation_date": null
+        },
         "rkc": null,
         "address": {
           "value": "г Самара, ул Ново-Садовая, д 305",
@@ -381,8 +400,11 @@
           "data": {
             "postal_code": "443011",
             "country": "Россия",
+            "country_iso_code": "RU",
+            "federal_district": "Приволжский",
             "region_fias_id": "df3d7359-afa9-4aaa-8ff9-197e73906b1c",
             "region_kladr_id": "6300000000000",
+            "region_iso_code": "RU-SAM",
             "region_with_type": "Самарская обл",
             "region_type": "обл",
             "region_type_full": "область",
@@ -463,7 +485,7 @@
               {
                 "name": "Гагаринская",
                 "line": "Первая",
-                "distance": 4
+                "distance": 4.0
               }
             ],
             "qc_geo": "0",
@@ -471,17 +493,11 @@
             "qc_house": "2",
             "history_values": null,
             "unparsed_parts": null,
-            "source": "443011, Самара, ул Ново-Садовая, 305",
+            "source": "443011, г. Самара, ул Ново-Садовая, 305",
             "qc": "0"
           }
         },
-        "phones": null,
-        "state": {
-          "status": "ACTIVE",
-          "actuality_date": 1558915200000,
-          "registration_date": null,
-          "liquidation_date": null
-        }
+        "phones": null
       }
     },
     {
@@ -503,6 +519,13 @@
         "okpo": null,
         "correspondent_account": "30101810500000000641",
         "registration_number": "1481/982",
+        "payment_city": "г. Новосибирск",
+        "state": {
+          "status": "ACTIVE",
+          "actuality_date": 1570321104000,
+          "registration_date": null,
+          "liquidation_date": null
+        },
         "rkc": null,
         "address": {
           "value": "г Новосибирск, ул Серебренниковская, д 20",
@@ -510,8 +533,11 @@
           "data": {
             "postal_code": "630007",
             "country": "Россия",
+            "country_iso_code": "RU",
+            "federal_district": "Сибирский",
             "region_fias_id": "1ac46b49-3209-4814-b7bf-a509ea1aecd9",
             "region_kladr_id": "5400000000000",
+            "region_iso_code": "RU-NVS",
             "region_with_type": "Новосибирская обл",
             "region_type": "обл",
             "region_type_full": "область",
@@ -574,7 +600,7 @@
             "tax_office": "5406",
             "tax_office_legal": "5406",
             "timezone": "UTC+7",
-            "geo_lat": "55.0244921",
+            "geo_lat": "55.0246253",
             "geo_lon": "82.9265197",
             "beltway_hit": null,
             "beltway_distance": null,
@@ -587,10 +613,10 @@
               {
                 "name": "Октябрьская",
                 "line": "Ленинская",
-                "distance": 1
+                "distance": 1.0
               },
               {
-                "name": "Речной вокзал",
+                "name": "Красный проспект",
                 "line": "Ленинская",
                 "distance": 1.9
               }
@@ -600,17 +626,11 @@
             "qc_house": "2",
             "history_values": null,
             "unparsed_parts": null,
-            "source": "630007, Новосибирск, ул Серебренниковская, 20",
+            "source": "630007, г. Новосибирск, ул Серебренниковская, 20",
             "qc": "0"
           }
         },
-        "phones": null,
-        "state": {
-          "status": "ACTIVE",
-          "actuality_date": 1558915200000,
-          "registration_date": null,
-          "liquidation_date": null
-        }
+        "phones": null
       }
     },
     {
@@ -632,6 +652,13 @@
         "okpo": null,
         "correspondent_account": "30101810500000000674",
         "registration_number": "1481/366",
+        "payment_city": "г. Екатеринбург",
+        "state": {
+          "status": "ACTIVE",
+          "actuality_date": 1570321104000,
+          "registration_date": null,
+          "liquidation_date": null
+        },
         "rkc": null,
         "address": {
           "value": "г Екатеринбург, ул Куйбышева, д 67",
@@ -639,8 +666,11 @@
           "data": {
             "postal_code": "620026",
             "country": "Россия",
+            "country_iso_code": "RU",
+            "federal_district": "Уральский",
             "region_fias_id": "92b30014-4d52-4e2e-892d-928142b924bf",
             "region_kladr_id": "6600000000000",
+            "region_iso_code": "RU-SVE",
             "region_with_type": "Свердловская обл",
             "region_type": "обл",
             "region_type_full": "область",
@@ -729,17 +759,11 @@
             "qc_house": "10",
             "history_values": null,
             "unparsed_parts": null,
-            "source": "620026, Екатеринбург, ул Куйбышева, 67",
+            "source": "620026, г. Екатеринбург, ул Куйбышева, 67",
             "qc": "0"
           }
         },
-        "phones": null,
-        "state": {
-          "status": "ACTIVE",
-          "actuality_date": 1558915200000,
-          "registration_date": null,
-          "liquidation_date": null
-        }
+        "phones": null
       }
     },
     {
@@ -761,6 +785,13 @@
         "okpo": null,
         "correspondent_account": "30101810500000000608",
         "registration_number": "1481/1662",
+        "payment_city": "г. Абакан",
+        "state": {
+          "status": "ACTIVE",
+          "actuality_date": 1570321104000,
+          "registration_date": null,
+          "liquidation_date": null
+        },
         "rkc": null,
         "address": {
           "value": "г Абакан, ул Пушкина, д 165 стр а",
@@ -768,8 +799,11 @@
           "data": {
             "postal_code": "655017",
             "country": "Россия",
+            "country_iso_code": "RU",
+            "federal_district": "Сибирский",
             "region_fias_id": "8d3f1d35-f0f4-41b5-b5b7-e7cadf3e7bd7",
             "region_kladr_id": "1900000000000",
+            "region_iso_code": "RU-KK",
             "region_with_type": "Респ Хакасия",
             "region_type": "Респ",
             "region_type_full": "республика",
@@ -842,17 +876,11 @@
             "qc_house": "10",
             "history_values": null,
             "unparsed_parts": null,
-            "source": "655017, Абакан, ул Пушкина, 165, лит А",
+            "source": "655017, г. Абакан, ул Пушкина, 165, лит А",
             "qc": "0"
           }
         },
-        "phones": null,
-        "state": {
-          "status": "ACTIVE",
-          "actuality_date": 1558915200000,
-          "registration_date": null,
-          "liquidation_date": null
-        }
+        "phones": null
       }
     },
     {
@@ -874,6 +902,13 @@
         "okpo": null,
         "correspondent_account": "30101810200000000604",
         "registration_number": "1481/16",
+        "payment_city": "г. Барнаул",
+        "state": {
+          "status": "ACTIVE",
+          "actuality_date": 1570321104000,
+          "registration_date": null,
+          "liquidation_date": null
+        },
         "rkc": null,
         "address": {
           "value": "г Барнаул, Комсомольский пр-кт, д 106А",
@@ -881,8 +916,11 @@
           "data": {
             "postal_code": "656038",
             "country": "Россия",
+            "country_iso_code": "RU",
+            "federal_district": "Сибирский",
             "region_fias_id": "8276c6a1-1a86-4f0d-8920-aba34d4cc34a",
             "region_kladr_id": "2200000000000",
+            "region_iso_code": "RU-ALT",
             "region_with_type": "Алтайский край",
             "region_type": "край",
             "region_type_full": "край",
@@ -955,17 +993,11 @@
             "qc_house": "2",
             "history_values": null,
             "unparsed_parts": null,
-            "source": "656038, Барнаул, Комсомольский пр-т, 106 А",
+            "source": "656038, г. Барнаул, Комсомольский пр-т, 106 А",
             "qc": "0"
           }
         },
-        "phones": null,
-        "state": {
-          "status": "ACTIVE",
-          "actuality_date": 1558915200000,
-          "registration_date": null,
-          "liquidation_date": null
-        }
+        "phones": null
       }
     },
     {
@@ -987,6 +1019,13 @@
         "okpo": null,
         "correspondent_account": "30101810500000000602",
         "registration_number": "1481/112",
+        "payment_city": "г. Астрахань",
+        "state": {
+          "status": "ACTIVE",
+          "actuality_date": 1570321104000,
+          "registration_date": null,
+          "liquidation_date": null
+        },
         "rkc": null,
         "address": {
           "value": "г Астрахань, ул Кирова, д 41",
@@ -994,8 +1033,11 @@
           "data": {
             "postal_code": "414000",
             "country": "Россия",
+            "country_iso_code": "RU",
+            "federal_district": "Южный",
             "region_fias_id": "83009239-25cb-4561-af8e-7ee111b1cb73",
             "region_kladr_id": "3000000000000",
+            "region_iso_code": "RU-AST",
             "region_with_type": "Астраханская обл",
             "region_type": "обл",
             "region_type_full": "область",
@@ -1068,17 +1110,11 @@
             "qc_house": "2",
             "history_values": null,
             "unparsed_parts": null,
-            "source": "414000, Астрахань, ул Кирова, 41",
+            "source": "414000, г. Астрахань, ул Кирова, 41",
             "qc": "0"
           }
         },
-        "phones": null,
-        "state": {
-          "status": "ACTIVE",
-          "actuality_date": 1558915200000,
-          "registration_date": null,
-          "liquidation_date": null
-        }
+        "phones": null
       }
     },
     {
@@ -1100,6 +1136,13 @@
         "okpo": null,
         "correspondent_account": "30101810300000000601",
         "registration_number": "1481/130",
+        "payment_city": "г. Уфа",
+        "state": {
+          "status": "ACTIVE",
+          "actuality_date": 1570321104000,
+          "registration_date": null,
+          "liquidation_date": null
+        },
         "rkc": null,
         "address": {
           "value": "г Уфа, ул Рихарда Зорге, д 5",
@@ -1107,8 +1150,11 @@
           "data": {
             "postal_code": "450059",
             "country": "Россия",
+            "country_iso_code": "RU",
+            "federal_district": "Приволжский",
             "region_fias_id": "6f2cbfd8-692a-4ee4-9b16-067210bde3fc",
             "region_kladr_id": "0200000000000",
+            "region_iso_code": "RU-BA",
             "region_with_type": "Респ Башкортостан",
             "region_type": "Респ",
             "region_type_full": "республика",
@@ -1181,17 +1227,11 @@
             "qc_house": "2",
             "history_values": null,
             "unparsed_parts": null,
-            "source": "450059, Уфа, ул Рихарда Зорге, 5",
+            "source": "450059, г. Уфа, ул Рихарда Зорге, 5",
             "qc": "0"
           }
         },
-        "phones": null,
-        "state": {
-          "status": "ACTIVE",
-          "actuality_date": 1558915200000,
-          "registration_date": null,
-          "liquidation_date": null
-        }
+        "phones": null
       }
     }
   ]

@@ -81,6 +81,20 @@ public class AggregatorProxyServiceTest {
     }
 
     @Test
+    public void konturFocusEgrDetailsLegalTest() throws TException {
+        final ResponseEntity<String> responseEntity = new ResponseEntity<>(TestResponse.kfEgrDetailsLegal(), HttpStatus.OK);
+        when(konturFocusApiMock.egrDetailsRequest(anyList(), anyList())).thenReturn(responseEntity);
+        final KonturFocusRequest konturFocusRequest = new KonturFocusRequest();
+        final EgrDetailsQuery egrDetailsQuery = new EgrDetailsQuery();
+        egrDetailsQuery.setInn(INN_LIST);
+        egrDetailsQuery.setOgrn(OGRN_LIST);
+        konturFocusRequest.setEgrDetailsQuery(egrDetailsQuery);
+        final KonturFocusResponse konturFocusResponse = aggregatorProxyService.requestKonturFocus(konturFocusRequest, KonturFocusEndPoint.egrDetails);
+        verify(konturFocusApiMock, atLeastOnce()).egrDetailsRequest(anyList(), anyList());
+        Assert.assertNotNull(konturFocusResponse);
+    }
+
+    @Test
     public void konturFocusLicenseTest() throws TException {
         final ResponseEntity<String> responseEntity = new ResponseEntity<>(TestResponse.kfLicenseResp(), HttpStatus.OK);
         when(konturFocusApiMock.licenseRequest(anyList(), anyList())).thenReturn(responseEntity);

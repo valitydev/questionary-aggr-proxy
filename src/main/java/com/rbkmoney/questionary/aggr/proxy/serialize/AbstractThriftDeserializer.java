@@ -28,7 +28,8 @@ import java.util.Map;
 @Slf4j
 public abstract class AbstractThriftDeserializer<E extends TFieldIdEnum, T extends TBase<T, E>> extends JsonDeserializer<T> {
 
-    private final static ThriftFieldNameConverter DEF_FIELD_NAME_CONVERTER = new DefaultThriftFieldNameConverter();
+    private static final ThriftFieldNameConverter DEF_FIELD_NAME_CONVERTER = new DefaultThriftFieldNameConverter();
+
     private final Map<String, ThriftFieldNameConverter> fieldNameConverterMap = new HashMap<>();
     private final Map<String, UnionThriftFieldConverter> unionThriftFieldConverterMap = new HashMap<>();
     private final Map<String, FieldExtractor<T>> fieldExtractorMap = new HashMap<>();
@@ -40,7 +41,7 @@ public abstract class AbstractThriftDeserializer<E extends TFieldIdEnum, T exten
     public T deserialize(JsonParser jp, DeserializationContext ctx) throws IOException {
         final T instance = newInstance();
         final ObjectMapper mapper = (ObjectMapper) jp.getCodec();
-        final ObjectNode rootNode = (ObjectNode) mapper.readTree(jp);
+        final ObjectNode rootNode = mapper.readTree(jp);
         final Iterator<Map.Entry<String, JsonNode>> iterator = rootNode.fields();
 
         while (iterator.hasNext()) {

@@ -21,13 +21,16 @@ public class RequestLogInterceptor implements ClientHttpRequestInterceptor {
     }
 
     private void logRequest(HttpRequest request, byte[] body) throws IOException {
-        log.info("Request URI         : {}", request.getURI());
-        log.info("Request method      : {}", request.getMethod());
-        log.info("Request body: {}", new String(body, StandardCharsets.UTF_8));
+        log.info("Request URI: {}", request.getURI());
+        log.info("Request method: {}", request.getMethod());
+        String reqBody = new String(body, StandardCharsets.UTF_8);
+        if (!reqBody.isBlank()) {
+            log.info("Request body: {}", reqBody);
+        }
     }
 
     private void logResponse(ClientHttpResponse response) throws IOException {
-        log.info("Response status code  : {}", response.getStatusCode());
-        log.info("Response status text  : {}", response.getStatusText());
+        log.info("Response status code: {}", response.getStatusCode());
+        log.info("Response status text: {}", response.getStatusText());
     }
 }

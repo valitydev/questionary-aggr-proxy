@@ -10,7 +10,7 @@
     </parent>
 
     <artifactId>questionary-aggr-proxy</artifactId>
-    <version>0.0.2-SNAPSHOT</version>
+    <version>0.0.3-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>Questionary aggr proxy</name>
@@ -47,9 +47,8 @@
         <dependency>
             <groupId>com.rbkmoney</groupId>
             <artifactId>questionary-proxy-aggr-proto</artifactId>
-            <version>1.8-31d9486</version>
+            <version>1.10-805b775</version>
         </dependency>
-
         <!--spring-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
