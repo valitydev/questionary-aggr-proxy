@@ -1,10 +1,7 @@
 package com.rbkmoney.questionary.aggr.proxy.service;
 
 import com.rbkmoney.questionary.aggr.proxy.handler.dadata.*;
-import com.rbkmoney.questionary.aggr.proxy.handler.kontur.KonturFocusEgrDetailsHandler;
-import com.rbkmoney.questionary.aggr.proxy.handler.kontur.KonturFocusLicencesHandler;
-import com.rbkmoney.questionary.aggr.proxy.handler.kontur.KonturFocusReqHandler;
-import com.rbkmoney.questionary.aggr.proxy.handler.kontur.KonturFocusRequestHandler;
+import com.rbkmoney.questionary.aggr.proxy.handler.kontur.*;
 import com.rbkmoney.questionary.aggr.proxy.service.api.DaDataApi;
 import com.rbkmoney.questionary.aggr.proxy.service.api.KonturFocusApi;
 import com.rbkmoney.questionary_proxy_aggr.dadata_api.DaDataEndpoint;
@@ -55,6 +52,7 @@ public class AggregatorProxyServiceImpl implements AggregatorProxyService {
         konturFocusRequestHandlerMap.put(KonturFocusEndPoint.req, new KonturFocusReqHandler(konturFocusApi));
         konturFocusRequestHandlerMap.put(KonturFocusEndPoint.egrDetails, new KonturFocusEgrDetailsHandler(konturFocusApi));
         konturFocusRequestHandlerMap.put(KonturFocusEndPoint.licences, new KonturFocusLicencesHandler(konturFocusApi));
+        konturFocusRequestHandlerMap.put(KonturFocusEndPoint.beneficial_owners, new KonturFocusBeneficialOwnersHandler(konturFocusApi));
     }
 
     @Override

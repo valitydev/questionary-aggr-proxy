@@ -13,7 +13,7 @@ import java.util.List;
 
 public class KonturFocusBeneficialOwnersHandler extends AbstractKonturFocusHandler {
 
-    protected KonturFocusBeneficialOwnersHandler(KonturFocusApi konturFocusApi) {
+    public KonturFocusBeneficialOwnersHandler(KonturFocusApi konturFocusApi) {
         super(konturFocusApi);
     }
 
