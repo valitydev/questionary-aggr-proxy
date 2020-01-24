@@ -1,14 +1,12 @@
 package com.rbkmoney.questionary.aggr.proxy.service.api;
 
-import com.rbkmoney.damsel.questionary_proxy_aggr.DaDataRequestException;
 import com.rbkmoney.questionary.aggr.proxy.config.settings.DaDataSettings;
+import com.rbkmoney.questionary.aggr.proxy.exception.DaDataRequestException;
+import com.rbkmoney.questionary.aggr.proxy.exception.NotFoundException;
 import com.rbkmoney.questionary.aggr.proxy.service.api.model.DaDataQuery;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestTemplate;
 
@@ -43,49 +41,60 @@ public class DaDataApi {
         this.daDataSettings = daDataSettings;
     }
 
-    public ResponseEntity<String> addressRequest(DaDataQuery query) throws DaDataRequestException {
+    public ResponseEntity<String> addressRequest(DaDataQuery query) {
         return sendRequest(ADDRESS_URL, query, String.class);
     }
 
-    public ResponseEntity<String> partyRequest(DaDataQuery query) throws DaDataRequestException {
+    public ResponseEntity<String> partyRequest(DaDataQuery query) {
         return sendRequest(PARTY_URL, query, String.class);
     }
 
-    public ResponseEntity<String> bankRequest(DaDataQuery query) throws DaDataRequestException {
+    public ResponseEntity<String> bankRequest(DaDataQuery query) {
         return sendRequest(BANK_URL, query, String.class);
     }
 
-    public ResponseEntity<String> fioRequest(DaDataQuery query) throws DaDataRequestException {
+    public ResponseEntity<String> fioRequest(DaDataQuery query) {
         return sendRequest(FIO_URL, query, String.class);
     }
 
-    public ResponseEntity<String> fmsUnitRequest(DaDataQuery query) throws DaDataRequestException {
+    public ResponseEntity<String> fmsUnitRequest(DaDataQuery query) {
         return sendRequest(FMS_UNIT_URL, query, String.class);
     }
 
-    public ResponseEntity<String> fmsUnitByIdRequest(DaDataQuery query) throws DaDataRequestException {
+    public ResponseEntity<String> fmsUnitByIdRequest(DaDataQuery query) {
         return sendRequest(FMS_UNIT_BY_ID_URL, query, String.class);
     }
 
-    public ResponseEntity<String> okvedRequest(DaDataQuery query) throws DaDataRequestException {
+    public ResponseEntity<String> okvedRequest(DaDataQuery query) {
         return sendRequest(OKVED_URL, query, String.class);
     }
 
-    public ResponseEntity<String> okvedByIdRequest(DaDataQuery query) throws DaDataRequestException {
+    public ResponseEntity<String> okvedByIdRequest(DaDataQuery query) {
         return sendRequest(OKVED_BY_ID_URL, query, String.class);
     }
 
-    private <T, R> ResponseEntity<R> sendRequest(String url, T body, Class<R> responseType) throws DaDataRequestException {
+    private <T, R> ResponseEntity<R> sendRequest(String url, T body, Class<R> responseType) {
         final HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.setContentType(MediaType.APPLICATION_JSON);
         httpHeaders.set("Authorization", "Token " + daDataSettings.getToken());
         final HttpEntity<T> httpEntity = new HttpEntity<>(body, httpHeaders);
-        try {
-            return restTemplate.postForEntity(url, httpEntity, responseType);
-        } catch (Exception e) {
-            log.error("Request exception", e);
-            throw new DaDataRequestException(e.getMessage());
+        ResponseEntity<R> response = getResponseEntity(url, responseType, httpEntity);
+        HttpStatus statusCode = response.getStatusCode();
+        switch (statusCode) {
+            case OK:
+                return response;
+            case NOT_FOUND:
+                throw new NotFoundException("Http client throw " + statusCode.name());
+            default:
+                throw new DaDataRequestException("Http client throw " + statusCode.name());
         }
     }
 
+    private <T, R> ResponseEntity<R> getResponseEntity(String url, Class<R> responseType, HttpEntity<T> httpEntity) {
+        try {
+            return restTemplate.postForEntity(url, httpEntity, responseType);
+        } catch (Exception ex) {
+            throw new DaDataRequestException("Http client exchange exception", ex);
+        }
+    }
 }

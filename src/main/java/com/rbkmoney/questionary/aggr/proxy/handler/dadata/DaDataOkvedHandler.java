@@ -1,6 +1,6 @@
 package com.rbkmoney.questionary.aggr.proxy.handler.dadata;
 
-import com.rbkmoney.damsel.questionary_proxy_aggr.DaDataRequestException;
+import com.rbkmoney.questionary.aggr.proxy.exception.DaDataRequestException;
 import com.rbkmoney.questionary.aggr.proxy.handler.dadata.util.DaDataQueryMapper;
 import com.rbkmoney.questionary.aggr.proxy.serialize.model.OkvedContentWrapper;
 import com.rbkmoney.questionary.aggr.proxy.serialize.model.OkvedResponseWrapper;

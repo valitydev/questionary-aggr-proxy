@@ -1,6 +1,6 @@
 package com.rbkmoney.questionary.aggr.proxy.service.api;
 
-import com.rbkmoney.damsel.questionary_proxy_aggr.KonturFocusRequestException;
+import com.rbkmoney.questionary.aggr.proxy.exception.KonturFocusRequestException;
 import org.apache.thrift.TException;
 import org.junit.Test;
 import org.junit.runner.RunWith;
