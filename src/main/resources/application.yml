@@ -1,23 +1,43 @@
 server:
   port: '@server.port@'
+
 management:
   security:
     flag: false
+  server:
+    port: @management.port@
   metrics:
     export:
       statsd:
         flavor: etsy
         enabled: false
+      prometheus:
+        enabled: false
+  endpoint:
+    health:
+      show-details: always
+    metrics:
+      enabled: true
+    prometheus:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+
 spring:
   application:
     name: '@project.name@'
   output:
     ansi:
       enabled: always
+
 info:
   version: '@project.version@'
   stage: dev
+
 kontur-focus:
   token: 3208d29d15c507395db770d0e65f3711e40374df
+
 da-data:
   token: 27a1864e226f61f145ca150b5b64a378af1da650
