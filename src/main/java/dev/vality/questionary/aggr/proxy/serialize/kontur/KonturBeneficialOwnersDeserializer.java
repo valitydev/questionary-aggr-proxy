@@ -3,7 +3,8 @@ package dev.vality.questionary.aggr.proxy.serialize.kontur;
 import dev.vality.questionary.aggr.proxy.serialize.AbstractThriftDeserializer;
 import dev.vality.questionary_proxy_aggr.kontur_focus_beneficial_owner.BeneficialOwners;
 
-public class KonturBeneficialOwnersDeserializer extends AbstractThriftDeserializer<BeneficialOwners._Fields, BeneficialOwners> {
+public class KonturBeneficialOwnersDeserializer
+        extends AbstractThriftDeserializer<BeneficialOwners._Fields, BeneficialOwners> {
 
     public KonturBeneficialOwnersDeserializer() {
         addFieldNameConverter("beneficialOwnersFL", field -> {

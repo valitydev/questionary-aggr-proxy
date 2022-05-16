@@ -4,7 +4,6 @@ import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import dev.vality.questionary.aggr.proxy.serialize.dadata.*;
-import dev.vality.questionary.aggr.proxy.serialize.dadata.*;
 import dev.vality.questionary.aggr.proxy.service.api.DaDataApi;
 import dev.vality.questionary_proxy_aggr.base_dadata.*;
 import dev.vality.questionary_proxy_aggr.dadata_address.Address;

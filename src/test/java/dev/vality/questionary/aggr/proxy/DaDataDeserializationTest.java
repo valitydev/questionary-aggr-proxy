@@ -13,8 +13,6 @@ import dev.vality.questionary_proxy_aggr.dadata_fio.FioContent;
 import dev.vality.questionary_proxy_aggr.dadata_fms_unit.FmsUnitContent;
 import dev.vality.questionary_proxy_aggr.dadata_okved2.OkvedContent;
 import dev.vality.questionary_proxy_aggr.dadata_party.PartyContent;
-import dev.vality.questionary.aggr.proxy.serialize.dadata.*;
-import dev.vality.questionary.aggr.proxy.serialize.model.*;
 import org.apache.thrift.TException;
 import org.junit.Assert;
 import org.junit.Before;
@@ -37,7 +35,8 @@ public class DaDataDeserializationTest {
         final SimpleModule simpleModule = new SimpleModule();
         simpleModule.addDeserializer(Address.class, new DaDataAddressDeserializer());
         objectMapper.registerModule(simpleModule);
-        final AddressResponse addressResponse = objectMapper.readValue(TestResponse.daDataAddress(), AddressResponse.class);
+        final AddressResponse addressResponse =
+                objectMapper.readValue(TestResponse.daDataAddress(), AddressResponse.class);
         Assert.assertEquals(10, addressResponse.getSuggestions().size());
         final Address address = addressResponse.getSuggestions().get(0);
         Assert.assertEquals("г Москва, ул Хабаровская", address.getValue());
@@ -61,7 +60,8 @@ public class DaDataDeserializationTest {
         simpleModule.addDeserializer(DaDataState.class, new DaDataStateDeserializer());
         simpleModule.addDeserializer(License.class, new DaDataLicenseDeserializer());
         objectMapper.registerModule(simpleModule);
-        final PartyResponseWrapper partyContentHolder = objectMapper.readValue(TestResponse.daDataParty(), PartyResponseWrapper.class);
+        final PartyResponseWrapper partyContentHolder =
+                objectMapper.readValue(TestResponse.daDataParty(), PartyResponseWrapper.class);
         Assert.assertEquals(10, partyContentHolder.getPartyContentWrapperList().size());
         final PartyContent partyContent = partyContentHolder.getPartyContentWrapperList().get(0).getPartyContent();
         Assert.assertEquals("773601001", partyContent.getKpp());
@@ -69,7 +69,10 @@ public class DaDataDeserializationTest {
         Assert.assertEquals("ПРЕЗИДЕНТ, ПРЕДСЕДАТЕЛЬ ПРАВЛЕНИЯ", partyContent.getManagement().getPost());
         Assert.assertEquals("MAIN", partyContent.getBranchType().name());
         Assert.assertEquals(88, partyContent.getBranchCount());
-        Assert.assertEquals("145a83ab38c9ad95889a7b894ce57a97cf6f6d5f42932a71331ff18606edecc6", partyContent.getHid());
+        Assert.assertEquals(
+                "145a83ab38c9ad95889a7b894ce57a97cf6f6d5f42932a71331ff18606edecc6",
+                partyContent.getHid()
+        );
         Assert.assertEquals("LEGAL", partyContent.getType().name());
         Assert.assertEquals("ACTIVE", partyContent.getState().getStatus().name());
         Assert.assertEquals("2019-09-10T03:00", partyContent.getState().getActualityDate());
@@ -83,7 +86,10 @@ public class DaDataDeserializationTest {
         Assert.assertEquals("64.19", partyContent.getOkved());
         Assert.assertEquals("2002-08-16T04:00", partyContent.getOgrnDate());
         Assert.assertNotNull("г Москва, ул Вавилова, д 19", partyContent.getAddress().getValue());
-        Assert.assertNotNull("г Москва, Академический р-н, ул Вавилова, д 19", partyContent.getAddress().getUnrestrictedValue());
+        Assert.assertNotNull(
+                "г Москва, Академический р-н, ул Вавилова, д 19",
+                partyContent.getAddress().getUnrestrictedValue()
+        );
         Assert.assertNotNull("0.8", partyContent.getAddress().getMetroList().get(0).getDistance());
     }
 
@@ -94,7 +100,8 @@ public class DaDataDeserializationTest {
         simpleModule.addDeserializer(DaDataState.class, new DaDataStateDeserializer());
         simpleModule.addDeserializer(Payment.class, new DaDataPaymentDeserializer());
         objectMapper.registerModule(simpleModule);
-        final BankResponseWrapper bankResponseWrapper = objectMapper.readValue(TestResponse.daDataBank(), BankResponseWrapper.class);
+        final BankResponseWrapper bankResponseWrapper =
+                objectMapper.readValue(TestResponse.daDataBank(), BankResponseWrapper.class);
         Assert.assertEquals(10, bankResponseWrapper.getBankContentWrapperList().size());
         final BankContent bankContent = bankResponseWrapper.getBankContentWrapperList().get(0).getBankContent();
         Assert.assertEquals("СБЕРБАНК РОССИИ", bankContent.getValue());
@@ -113,7 +120,8 @@ public class DaDataDeserializationTest {
         final SimpleModule simpleModule = new SimpleModule();
         simpleModule.addDeserializer(FioContent.class, new DaDataFioDeserializer());
         objectMapper.registerModule(simpleModule);
-        final FioResponseWrapper fioResponseWrapper = objectMapper.readValue(TestResponse.daDataFio(), FioResponseWrapper.class);
+        final FioResponseWrapper fioResponseWrapper =
+                objectMapper.readValue(TestResponse.daDataFio(), FioResponseWrapper.class);
         Assert.assertEquals(10, fioResponseWrapper.getFioContentWrapperList().size());
         final FioContent fioContent = fioResponseWrapper.getFioContentWrapperList().get(0).getFioContent();
         Assert.assertEquals("Виктор", fioContent.getValue());
@@ -128,7 +136,8 @@ public class DaDataDeserializationTest {
         final SimpleModule simpleModule = new SimpleModule();
         simpleModule.addDeserializer(FmsUnitContent.class, new DaDataFmsUnitDeserializer());
         objectMapper.registerModule(simpleModule);
-        final FmsUnitResponseWrapper fmsUnitResponseWrapper = objectMapper.readValue(TestResponse.daDataFmsUnit(), FmsUnitResponseWrapper.class);
+        final FmsUnitResponseWrapper fmsUnitResponseWrapper =
+                objectMapper.readValue(TestResponse.daDataFmsUnit(), FmsUnitResponseWrapper.class);
         Assert.assertEquals(10, fmsUnitResponseWrapper.getFmsUnitContentWrapperList().size());
         final FmsUnitContent fmsUnitContent = fmsUnitResponseWrapper.getFmsUnitContentWrapperList().get(0).getFmsUnitContent();
         Assert.assertEquals("ИВАНОВСКИМ ПОСЕЛКОВЫЙ ОТДЕЛ МИЛИЦИИ ОВД КРАСНОАРМЕЙСКОГО РАЙОНА", fmsUnitContent.getValue());
@@ -144,15 +153,20 @@ public class DaDataDeserializationTest {
         final SimpleModule simpleModule = new SimpleModule();
         simpleModule.addDeserializer(OkvedContent.class, new DaDataOkvedDeserializer());
         objectMapper.registerModule(simpleModule);
-        final OkvedResponseWrapper okvedResponseWrapper = objectMapper.readValue(TestResponse.daDataOkved(), OkvedResponseWrapper.class);
+        final OkvedResponseWrapper okvedResponseWrapper =
+                objectMapper.readValue(TestResponse.daDataOkved(), OkvedResponseWrapper.class);
         Assert.assertEquals(10, okvedResponseWrapper.getOkvedContentWrapperList().size());
         final OkvedContent okvedContent = okvedResponseWrapper.getOkvedContentWrapperList().get(0).getOkvedContent();
-        Assert.assertEquals("Добыча абразивных материалов, асбеста, кремнеземистой каменной муки, природных графитов," +
-                " мыльного камня (талька), полевого шпата и т. д.", okvedContent.getValue());
+        Assert.assertEquals(
+                "Добыча абразивных материалов, асбеста, кремнеземистой каменной муки, природных графитов," +
+                " мыльного камня (талька), полевого шпата и т. д.",
+                okvedContent.getValue());
         Assert.assertEquals("B.08.99.2", okvedContent.getIdx());
         Assert.assertEquals("B", okvedContent.getSection());
         Assert.assertEquals("08.99.2", okvedContent.getCode());
-        Assert.assertEquals("Добыча абразивных материалов, асбеста, кремнеземистой каменной муки, природных графитов," +
-                " мыльного камня (талька), полевого шпата и т. д.", okvedContent.getName());
+        Assert.assertEquals(
+                "Добыча абразивных материалов, асбеста, кремнеземистой каменной муки, природных графитов," +
+                " мыльного камня (талька), полевого шпата и т. д.",
+                okvedContent.getName());
     }
 }

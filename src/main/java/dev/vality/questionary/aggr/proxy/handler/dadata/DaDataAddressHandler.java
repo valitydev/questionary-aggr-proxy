@@ -27,7 +27,8 @@ public class DaDataAddressHandler extends AbstractDaDataHandler {
         final ResponseEntity<String> responseEntity = daDataApi.addressRequest(daDataQuery);
 
         log.info("Read DaData address response");
-        final AddressResponse addressResponse = getObjectMapper().readValue(responseEntity.getBody(), AddressResponse.class);
+        final AddressResponse addressResponse =
+                getObjectMapper().readValue(responseEntity.getBody(), AddressResponse.class);
 
         return DaDataResponse.address_response(addressResponse);
     }

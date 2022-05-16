@@ -24,11 +24,13 @@ public class DaDataApi {
 
     private static final String FMS_UNIT_URL = "https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/fms_unit";
 
-    private static final String FMS_UNIT_BY_ID_URL = "https://suggestions.dadata.ru/suggestions/api/4_1/rs/findById/fms_unit";
+    private static final String FMS_UNIT_BY_ID_URL =
+            "https://suggestions.dadata.ru/suggestions/api/4_1/rs/findById/fms_unit";
 
     private static final String OKVED_URL = "https://suggestions.dadata.ru/suggestions/api/4_1/rs/suggest/okved2";
 
-    private static final String OKVED_BY_ID_URL = "https://suggestions.dadata.ru/suggestions/api/4_1/rs/findById/okved2";
+    private static final String OKVED_BY_ID_URL =
+            "https://suggestions.dadata.ru/suggestions/api/4_1/rs/findById/okved2";
 
     private final RestTemplate restTemplate;
 

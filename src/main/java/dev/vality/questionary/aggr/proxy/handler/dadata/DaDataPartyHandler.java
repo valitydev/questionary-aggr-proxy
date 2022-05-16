@@ -32,7 +32,8 @@ public class DaDataPartyHandler extends AbstractDaDataHandler {
         log.info("Converted partyQuery: {}", daDataQuery);
         final ResponseEntity<String> responseEntity = daDataApi.partyRequest(daDataQuery);
         log.info("Read DaData party response");
-        final PartyResponseWrapper partyResponseWrapper = getObjectMapper().readValue(responseEntity.getBody(), PartyResponseWrapper.class);
+        final PartyResponseWrapper partyResponseWrapper =
+                getObjectMapper().readValue(responseEntity.getBody(), PartyResponseWrapper.class);
         final List<PartyContent> partyContentList = partyResponseWrapper.getPartyContentWrapperList().stream()
                 .map(PartyContentWrapper::getPartyContent)
                 .collect(Collectors.toList());

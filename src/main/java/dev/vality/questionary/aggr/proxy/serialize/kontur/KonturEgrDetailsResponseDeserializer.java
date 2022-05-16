@@ -7,7 +7,8 @@ import dev.vality.questionary_proxy_aggr.kontur_focus_egr_details.EgrDetailsIndi
 import dev.vality.questionary_proxy_aggr.kontur_focus_egr_details.EgrDetailsLegalEntity;
 import dev.vality.questionary_proxy_aggr.kontur_focus_egr_details.EgrDetailsResponse;
 
-public class KonturEgrDetailsResponseDeserializer extends AbstractThriftDeserializer<EgrDetailsResponse._Fields, EgrDetailsResponse> {
+public class KonturEgrDetailsResponseDeserializer
+        extends AbstractThriftDeserializer<EgrDetailsResponse._Fields, EgrDetailsResponse> {
 
     private static final UnionThriftFieldConverter CONTRACTOR_IP_CONVERTER = new ContractorIPConverter();
 
@@ -34,7 +35,8 @@ public class KonturEgrDetailsResponseDeserializer extends AbstractThriftDeserial
         return new EgrDetailsResponse();
     }
 
-    private static final class ContractorULConverter implements UnionThriftFieldConverter<Contractor, EgrDetailsLegalEntity> {
+    private static final class ContractorULConverter
+            implements UnionThriftFieldConverter<Contractor, EgrDetailsLegalEntity> {
 
         @Override
         public Contractor union(EgrDetailsLegalEntity thriftInstance) {
@@ -47,7 +49,8 @@ public class KonturEgrDetailsResponseDeserializer extends AbstractThriftDeserial
         }
     }
 
-    private static final class ContractorIPConverter implements UnionThriftFieldConverter<Contractor, EgrDetailsIndividualEntity> {
+    private static final class ContractorIPConverter
+            implements UnionThriftFieldConverter<Contractor, EgrDetailsIndividualEntity> {
 
         @Override
         public Contractor union(EgrDetailsIndividualEntity thriftInstance) {

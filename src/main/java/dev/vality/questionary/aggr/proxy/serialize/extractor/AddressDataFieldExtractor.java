@@ -19,7 +19,8 @@ public class AddressDataFieldExtractor implements FieldExtractor<Address> {
         if (fiasLevel != null) {
             instance.setFiasLevel(Byte.parseByte(fiasLevel));
         }
-        final String fiasActualityState = JsonHelper.safeGet(node, "fias_actuality_state", JsonNode::textValue);
+        final String fiasActualityState =
+                JsonHelper.safeGet(node, "fias_actuality_state", JsonNode::textValue);
         if (fiasActualityState != null) {
             instance.setFiasActualityState(Byte.parseByte(fiasActualityState));
         }
@@ -45,9 +46,13 @@ public class AddressDataFieldExtractor implements FieldExtractor<Address> {
         final AddressRegionData addressRegionData = new AddressRegionData();
         addressRegionData.setRegionFiasId(JsonHelper.safeGet(node, "region_fias_id", JsonNode::textValue));
         addressRegionData.setRegionKladrId(JsonHelper.safeGet(node, "region_kladr_id", JsonNode::textValue));
-        addressRegionData.setRegionWithType(JsonHelper.safeGet(node, "region_with_type", JsonNode::textValue));
+        addressRegionData.setRegionWithType(
+                JsonHelper.safeGet(node, "region_with_type", JsonNode::textValue)
+        );
         addressRegionData.setRegionType(JsonHelper.safeGet(node, "region_type", JsonNode::textValue));
-        addressRegionData.setRegionTypeFull(JsonHelper.safeGet(node, "region_type_full", JsonNode::textValue));
+        addressRegionData.setRegionTypeFull(
+                JsonHelper.safeGet(node, "region_type_full", JsonNode::textValue)
+        );
         addressRegionData.setRegion(JsonHelper.safeGet(node, "region", JsonNode::textValue));
         instance.setRegion(addressRegionData);
 
@@ -71,28 +76,56 @@ public class AddressDataFieldExtractor implements FieldExtractor<Address> {
         instance.setCity(addressCityData);
 
         final AddressCityDistrictData addressCityDistrictData = new AddressCityDistrictData();
-        addressCityDistrictData.setCityDistrictFiasId(JsonHelper.safeGet(node, "city_district_fias_id", JsonNode::textValue));
-        addressCityDistrictData.setCityDistrictKladrId(JsonHelper.safeGet(node, "city_district_kladr_id", JsonNode::textValue));
-        addressCityDistrictData.setCityDistrictWithType(JsonHelper.safeGet(node, "city_district_with_type", JsonNode::textValue));
-        addressCityDistrictData.setCityDistrictType(JsonHelper.safeGet(node, "city_district_type", JsonNode::textValue));
-        addressCityDistrictData.setCityDistrictTypeFull(JsonHelper.safeGet(node, "city_district_type_full", JsonNode::textValue));
-        addressCityDistrictData.setCityDistrict(JsonHelper.safeGet(node, "city_district", JsonNode::textValue));
+        addressCityDistrictData.setCityDistrictFiasId(
+                JsonHelper.safeGet(node, "city_district_fias_id", JsonNode::textValue)
+        );
+        addressCityDistrictData.setCityDistrictKladrId(
+                JsonHelper.safeGet(node, "city_district_kladr_id", JsonNode::textValue)
+        );
+        addressCityDistrictData.setCityDistrictWithType(
+                JsonHelper.safeGet(node, "city_district_with_type", JsonNode::textValue)
+        );
+        addressCityDistrictData.setCityDistrictType(
+                JsonHelper.safeGet(node, "city_district_type", JsonNode::textValue)
+        );
+        addressCityDistrictData.setCityDistrictTypeFull(
+                JsonHelper.safeGet(node, "city_district_type_full", JsonNode::textValue)
+        );
+        addressCityDistrictData.setCityDistrict(
+                JsonHelper.safeGet(node, "city_district", JsonNode::textValue)
+        );
         instance.setCityDistrict(addressCityDistrictData);
 
         final AddressSettlementData addressSettlementData = new AddressSettlementData();
-        addressSettlementData.setSettlementFiasId(JsonHelper.safeGet(node, "settlement_fias_id", JsonNode::textValue));
-        addressSettlementData.setSettlementKladrId(JsonHelper.safeGet(node, "settlement_kladr_id", JsonNode::textValue));
-        addressSettlementData.setSettlementWithType(JsonHelper.safeGet(node, "settlement_with_type", JsonNode::textValue));
-        addressSettlementData.setSettlementType(JsonHelper.safeGet(node, "settlement_type", JsonNode::textValue));
-        addressSettlementData.setSettlementTypeFull(JsonHelper.safeGet(node, "settlement_type_full", JsonNode::textValue));
-        addressSettlementData.setSettlement(JsonHelper.safeGet(node, "settlement", JsonNode::textValue));
+        addressSettlementData.setSettlementFiasId(
+                JsonHelper.safeGet(node, "settlement_fias_id", JsonNode::textValue)
+        );
+        addressSettlementData.setSettlementKladrId(
+                JsonHelper.safeGet(node, "settlement_kladr_id", JsonNode::textValue)
+        );
+        addressSettlementData.setSettlementWithType(
+                JsonHelper.safeGet(node, "settlement_with_type", JsonNode::textValue)
+        );
+        addressSettlementData.setSettlementType(
+                JsonHelper.safeGet(node, "settlement_type", JsonNode::textValue)
+        );
+        addressSettlementData.setSettlementTypeFull(
+                JsonHelper.safeGet(node, "settlement_type_full", JsonNode::textValue)
+        );
+        addressSettlementData.setSettlement(
+                JsonHelper.safeGet(node, "settlement", JsonNode::textValue)
+        );
         instance.setSettlement(addressSettlementData);
 
         final AddressStreetData addressStreetData = new AddressStreetData();
         addressStreetData.setStreetFiasId(JsonHelper.safeGet(node, "street_fias_id", JsonNode::textValue));
         addressStreetData.setStreetKladrId(JsonHelper.safeGet(node, "street_kladr_id", JsonNode::textValue));
-        addressStreetData.setStreetWithType(JsonHelper.safeGet(node, "street_with_type", JsonNode::textValue));
-        addressStreetData.setStreetTypeFull(JsonHelper.safeGet(node, "street_type_full", JsonNode::textValue));
+        addressStreetData.setStreetWithType(
+                JsonHelper.safeGet(node, "street_with_type", JsonNode::textValue)
+        );
+        addressStreetData.setStreetTypeFull(
+                JsonHelper.safeGet(node, "street_type_full", JsonNode::textValue)
+        );
         addressStreetData.setStreetType(JsonHelper.safeGet(node, "street_type", JsonNode::textValue));
         addressStreetData.setStreet(JsonHelper.safeGet(node, "street", JsonNode::textValue));
         instance.setStreet(addressStreetData);

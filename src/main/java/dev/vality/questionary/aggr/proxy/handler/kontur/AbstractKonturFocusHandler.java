@@ -19,7 +19,6 @@ import dev.vality.questionary_proxy_aggr.kontur_focus_req.LegalEntityStatusDetai
 import dev.vality.questionary_proxy_aggr.kontur_focus_req.PrivateEntityStatusDetail;
 import dev.vality.questionary_proxy_aggr.kontur_focus_req.ReqIndividualEntity;
 import dev.vality.questionary_proxy_aggr.kontur_focus_req.ReqResponse;
-import dev.vality.questionary.aggr.proxy.serialize.kontur.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

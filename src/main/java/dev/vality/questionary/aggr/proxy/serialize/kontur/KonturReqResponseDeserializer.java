@@ -34,7 +34,8 @@ public class KonturReqResponseDeserializer extends AbstractThriftDeserializer<Re
         return new ReqResponse();
     }
 
-    private static final class ContractorIPConverter implements UnionThriftFieldConverter<Contractor, ReqIndividualEntity> {
+    private static final class ContractorIPConverter
+            implements UnionThriftFieldConverter<Contractor, ReqIndividualEntity> {
 
         @Override
         public Contractor union(ReqIndividualEntity thriftInstance) {
@@ -48,7 +49,8 @@ public class KonturReqResponseDeserializer extends AbstractThriftDeserializer<Re
 
     }
 
-    private static final class ContractorULConverter implements UnionThriftFieldConverter<Contractor, ReqLegalEntity> {
+    private static final class ContractorULConverter
+            implements UnionThriftFieldConverter<Contractor, ReqLegalEntity> {
 
         @Override
         public Contractor union(ReqLegalEntity thriftInstance) {

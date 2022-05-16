@@ -26,7 +26,8 @@ import java.util.Map;
  * @param <T> An implementation of the {@link TBase} interface.
  */
 @Slf4j
-public abstract class AbstractThriftDeserializer<E extends TFieldIdEnum, T extends TBase<T, E>> extends JsonDeserializer<T> {
+public abstract class AbstractThriftDeserializer<E extends TFieldIdEnum, T extends TBase<T, E>>
+        extends JsonDeserializer<T> {
 
     private static final ThriftFieldNameConverter DEF_FIELD_NAME_CONVERTER = new DefaultThriftFieldNameConverter();
 
@@ -80,7 +81,8 @@ public abstract class AbstractThriftDeserializer<E extends TFieldIdEnum, T exten
                 final Object value;
                 if (unionField) {
                     log.debug("Trying to convert thrift union field: {}", currentField.getKey());
-                    final UnionThriftFieldConverter unionThriftFieldConverter = unionThriftFieldConverterMap.get(currentField.getKey());
+                    final UnionThriftFieldConverter unionThriftFieldConverter =
+                            unionThriftFieldConverterMap.get(currentField.getKey());
                     if (unionThriftFieldConverter == null) {
                         log.error("Bad field '{}'. Need to specify field type for Union. Deserializer: {}",
                                 currentField.getKey(), this.getClass());
@@ -91,7 +93,8 @@ public abstract class AbstractThriftDeserializer<E extends TFieldIdEnum, T exten
                 } else {
                     value = mapper.readValue(parser, generateValueType);
                 }
-                log.debug("Field '{}' produced value '{}' of type '{}'.", currentField.getKey(), value, value.getClass().getName());
+                log.debug("Field '{}' produced value '{}' of type '{}'.",
+                        currentField.getKey(), value, value.getClass().getName());
                 instance.setFieldValue(field, value);
             } catch (Exception e) {
                 log.error("Unable to deserialize field '{}'.", currentField.getKey(), e);
@@ -121,7 +124,8 @@ public abstract class AbstractThriftDeserializer<E extends TFieldIdEnum, T exten
 
     protected abstract T newInstance();
 
-    protected JavaType generateValueType(T thriftInstance, E field, TypeFactory typeFactory) throws NoSuchFieldException {
+    protected JavaType generateValueType(T thriftInstance, E field, TypeFactory typeFactory)
+            throws NoSuchFieldException {
         final Field declaredField = thriftInstance.getClass().getDeclaredField(field.getFieldName());
         if (declaredField.getType().equals(declaredField.getGenericType())) {
             log.debug("Generating JavaType for type '{}'.", declaredField.getType());
@@ -132,7 +136,8 @@ public abstract class AbstractThriftDeserializer<E extends TFieldIdEnum, T exten
             for (int i = 0; i < type.getActualTypeArguments().length; i++) {
                 parameterizedTypes[i] = (Class<?>) type.getActualTypeArguments()[i];
             }
-            log.debug("Generating JavaType for type '{}' with generics '{}'", declaredField.getType(), parameterizedTypes);
+            log.debug("Generating JavaType for type '{}' with generics '{}'",
+                    declaredField.getType(), parameterizedTypes);
             return typeFactory.constructParametricType(declaredField.getType(), parameterizedTypes);
         }
     }

@@ -26,11 +26,13 @@ public class KonturFocusBeneficialOwnersHandler extends AbstractKonturFocusHandl
         log.info("BeneficialOwner query {}", beneficialOwnerQuery);
         final ResponseEntity<String> responseEntity = konturFocusApi.beneficialOwnerRequest(
                 beneficialOwnerQuery.getOgrn(), beneficialOwnerQuery.getInn());
-        final List<BeneficialOwnerResponse> beneficialOwnerResponseList = getObjectMapper().readValue(responseEntity.getBody(),
-                new TypeReference<List<BeneficialOwnerResponse>>() {
-                });
+        final List<BeneficialOwnerResponse> beneficialOwnerResponseList =
+                getObjectMapper().readValue(responseEntity.getBody(),
+                        new TypeReference<List<BeneficialOwnerResponse>>() {
+                        });
 
-        return KonturFocusResponse.beneficial_owner_responses(new BeneficialOwnerResponses(beneficialOwnerResponseList));
+        return KonturFocusResponse.beneficial_owner_responses(
+                new BeneficialOwnerResponses(beneficialOwnerResponseList));
     }
 
 }

@@ -26,7 +26,8 @@ public class QuestionaryAggrProxyHandler implements QuestionaryAggrProxyHandlerS
 
     @Override
     public KonturFocusResponse requestKonturFocus(KonturFocusRequest request,
-                                                  KonturFocusEndPoint endPoint) throws KonturFocusInvalidRequest, KonturFocusNotFound, org.apache.thrift.TException {
+                                                  KonturFocusEndPoint endPoint)
+            throws KonturFocusInvalidRequest, KonturFocusNotFound, org.apache.thrift.TException {
         try {
             return aggregatorProxyService.requestKonturFocus(request, endPoint);
         } catch (KonturFocusRequestException ex) {
@@ -43,7 +44,8 @@ public class QuestionaryAggrProxyHandler implements QuestionaryAggrProxyHandlerS
 
     @Override
     public DaDataResponse requestDaData(DaDataRequest request,
-                                        DaDataEndpoint endPoint) throws DaDataInvalidRequest, DaDataNotFound, org.apache.thrift.TException {
+                                        DaDataEndpoint endPoint)
+            throws DaDataInvalidRequest, DaDataNotFound, org.apache.thrift.TException {
         try {
             return aggregatorProxyService.requestDaData(request, endPoint);
         } catch (DaDataRequestException ex) {

@@ -43,7 +43,8 @@ public class DaDataFmsUnitHandler extends AbstractDaDataHandler {
         } else {
             throw new DaDataRequestException("Unknown request type: {}" + fmsUnitQuery.getQueryType());
         }
-        final FmsUnitResponseWrapper fmsUnitResponseWrapper = getObjectMapper().readValue(responseEntity.getBody(), FmsUnitResponseWrapper.class);
+        final FmsUnitResponseWrapper fmsUnitResponseWrapper =
+                getObjectMapper().readValue(responseEntity.getBody(), FmsUnitResponseWrapper.class);
         final List<FmsUnitContent> fmsUnitContentList = fmsUnitResponseWrapper.getFmsUnitContentWrapperList().stream()
                 .map(FmsUnitContentWrapper::getFmsUnitContent)
                 .collect(Collectors.toList());

@@ -25,7 +25,9 @@ public class AddressFieldExtractor implements FieldExtractor<Address> {
 
         final JsonNode dataNode = node.get("data");
 
-        if (dataNode == null) return;
+        if (dataNode == null) {
+            return;
+        }
 
         addressDataFieldExtractor.extract(instance, dataNode);
     }

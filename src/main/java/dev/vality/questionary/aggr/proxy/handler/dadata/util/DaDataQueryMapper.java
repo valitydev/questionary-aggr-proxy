@@ -9,7 +9,6 @@ import dev.vality.questionary_proxy_aggr.dadata_fio.FioQuery;
 import dev.vality.questionary_proxy_aggr.dadata_fms_unit.FmsUnitQuery;
 import dev.vality.questionary_proxy_aggr.dadata_okved2.OkvedQuery;
 import dev.vality.questionary_proxy_aggr.dadata_party.PartyQuery;
-import dev.vality.questionary.aggr.proxy.service.api.model.*;
 import lombok.AccessLevel;
 import lombok.NoArgsConstructor;
 
@@ -42,13 +41,15 @@ public class DaDataQueryMapper {
             query.setLocations(dataLocationFilterList);
         }
         if (addressQuery.isSetLocationsBoost() && !addressQuery.getLocationsBoost().isEmpty()) {
-            final List<DaDataLocationBoostFilter> dataLocationBoostFilterList = addressQuery.getLocationsBoost().stream()
-                    .map(locationBoostFilter -> {
-                        final DaDataLocationBoostFilter daDataLocationBoostFilter = new DaDataLocationBoostFilter();
-                        daDataLocationBoostFilter.setKladrId(locationBoostFilter.getKladrId());
-                        return daDataLocationBoostFilter;
-                    })
-                    .collect(Collectors.toList());
+            final List<DaDataLocationBoostFilter> dataLocationBoostFilterList =
+                    addressQuery.getLocationsBoost().stream()
+                            .map(locationBoostFilter -> {
+                                final DaDataLocationBoostFilter daDataLocationBoostFilter =
+                                        new DaDataLocationBoostFilter();
+                                daDataLocationBoostFilter.setKladrId(locationBoostFilter.getKladrId());
+                                return daDataLocationBoostFilter;
+                            })
+                            .collect(Collectors.toList());
             query.setLocationsBoost(dataLocationBoostFilterList);
         }
         if (addressQuery.isSetFromBound()) {
@@ -158,7 +159,8 @@ public class DaDataQueryMapper {
         return query;
     }
 
-    private static List<DaDataLocationBoostFilter> locationBoostToDaData(List<LocationBoostFilter> locationBoostFilterList) {
+    private static List<DaDataLocationBoostFilter> locationBoostToDaData(
+            List<LocationBoostFilter> locationBoostFilterList) {
         return locationBoostFilterList.stream()
                 .map(locationBoostFilter -> {
                     final DaDataLocationBoostFilter daDataLocationBoostFilter = new DaDataLocationBoostFilter();

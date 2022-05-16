@@ -50,7 +50,8 @@ public class DaDataOkvedHandler extends AbstractDaDataHandler {
         }
 
         log.info("Read DaData okved response");
-        final OkvedResponseWrapper okvedResponseWrapper = getObjectMapper().readValue(responseEntity.getBody(), OkvedResponseWrapper.class);
+        final OkvedResponseWrapper okvedResponseWrapper =
+                getObjectMapper().readValue(responseEntity.getBody(), OkvedResponseWrapper.class);
         final List<OkvedContent> okvedContentList = okvedResponseWrapper.getOkvedContentWrapperList().stream()
                 .map(OkvedContentWrapper::getOkvedContent)
                 .collect(Collectors.toList());

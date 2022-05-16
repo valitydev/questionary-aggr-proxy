@@ -32,7 +32,8 @@ public class DaDataFioHandler extends AbstractDaDataHandler {
         log.info("Converted fioQuery: {}", daDataQuery);
         final ResponseEntity<String> responseEntity = daDataApi.fioRequest(daDataQuery);
         log.info("Read DaData fio response");
-        final FioResponseWrapper fioResponseWrapper = getObjectMapper().readValue(responseEntity.getBody(), FioResponseWrapper.class);
+        final FioResponseWrapper fioResponseWrapper =
+                getObjectMapper().readValue(responseEntity.getBody(), FioResponseWrapper.class);
         final List<FioContent> fioContents = fioResponseWrapper.getFioContentWrapperList().stream()
                 .map(FioContentWrapper::getFioContent)
                 .collect(Collectors.toList());

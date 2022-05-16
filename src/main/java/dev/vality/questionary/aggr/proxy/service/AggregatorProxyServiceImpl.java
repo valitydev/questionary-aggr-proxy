@@ -2,7 +2,6 @@ package dev.vality.questionary.aggr.proxy.service;
 
 import dev.vality.questionary.aggr.proxy.handler.dadata.*;
 import dev.vality.questionary.aggr.proxy.handler.kontur.*;
-import dev.vality.questionary.aggr.proxy.handler.kontur.*;
 import dev.vality.questionary.aggr.proxy.service.api.DaDataApi;
 import dev.vality.questionary.aggr.proxy.service.api.KonturFocusApi;
 import dev.vality.questionary_proxy_aggr.dadata_api.DaDataEndpoint;
@@ -11,7 +10,6 @@ import dev.vality.questionary_proxy_aggr.dadata_api.DaDataResponse;
 import dev.vality.questionary_proxy_aggr.kontur_focus_api.KonturFocusEndPoint;
 import dev.vality.questionary_proxy_aggr.kontur_focus_api.KonturFocusRequest;
 import dev.vality.questionary_proxy_aggr.kontur_focus_api.KonturFocusResponse;
-import dev.vality.questionary.aggr.proxy.handler.dadata.*;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.thrift.TException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,9 +22,11 @@ import java.util.Map;
 @Service
 public class AggregatorProxyServiceImpl implements AggregatorProxyService {
 
-    private final Map<DaDataEndpoint, DaDataRequestHandler> daDataRequestHandlerMap = new EnumMap<>(DaDataEndpoint.class);
+    private final Map<DaDataEndpoint, DaDataRequestHandler> daDataRequestHandlerMap =
+            new EnumMap<>(DaDataEndpoint.class);
 
-    private final Map<KonturFocusEndPoint, KonturFocusRequestHandler> konturFocusRequestHandlerMap = new EnumMap<>(KonturFocusEndPoint.class);
+    private final Map<KonturFocusEndPoint, KonturFocusRequestHandler> konturFocusRequestHandlerMap =
+            new EnumMap<>(KonturFocusEndPoint.class);
 
     private final DaDataApi daDataApi;
 
@@ -52,9 +52,13 @@ public class AggregatorProxyServiceImpl implements AggregatorProxyService {
 
     private void initKonturFocusRequestHandler() {
         konturFocusRequestHandlerMap.put(KonturFocusEndPoint.req, new KonturFocusReqHandler(konturFocusApi));
-        konturFocusRequestHandlerMap.put(KonturFocusEndPoint.egrDetails, new KonturFocusEgrDetailsHandler(konturFocusApi));
+        konturFocusRequestHandlerMap.put(
+                KonturFocusEndPoint.egrDetails, new KonturFocusEgrDetailsHandler(konturFocusApi)
+        );
         konturFocusRequestHandlerMap.put(KonturFocusEndPoint.licences, new KonturFocusLicencesHandler(konturFocusApi));
-        konturFocusRequestHandlerMap.put(KonturFocusEndPoint.beneficial_owners, new KonturFocusBeneficialOwnersHandler(konturFocusApi));
+        konturFocusRequestHandlerMap.put(
+                KonturFocusEndPoint.beneficial_owners, new KonturFocusBeneficialOwnersHandler(konturFocusApi)
+        );
     }
 
     @Override

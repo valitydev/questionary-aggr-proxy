@@ -68,7 +68,8 @@ public class AggregatorProxyServiceTest {
         reqQuery.setInn(INN_LIST);
         reqQuery.setOgrn(OGRN_LIST);
         konturFocusRequest.setReqQuery(reqQuery);
-        final KonturFocusResponse konturFocusResponse = aggregatorProxyService.requestKonturFocus(konturFocusRequest, KonturFocusEndPoint.req);
+        final KonturFocusResponse konturFocusResponse =
+                aggregatorProxyService.requestKonturFocus(konturFocusRequest, KonturFocusEndPoint.req);
 
         verify(konturFocusApiMock, atLeastOnce()).reqRequest(anyList(), anyList());
         Assert.assertNotNull(konturFocusResponse);
@@ -84,7 +85,8 @@ public class AggregatorProxyServiceTest {
         egrDetailsQuery.setInn(INN_LIST);
         egrDetailsQuery.setOgrn(OGRN_LIST);
         konturFocusRequest.setEgrDetailsQuery(egrDetailsQuery);
-        final KonturFocusResponse konturFocusResponse = aggregatorProxyService.requestKonturFocus(konturFocusRequest, KonturFocusEndPoint.egrDetails);
+        final KonturFocusResponse konturFocusResponse =
+                aggregatorProxyService.requestKonturFocus(konturFocusRequest, KonturFocusEndPoint.egrDetails);
 
         verify(konturFocusApiMock, atLeastOnce()).egrDetailsRequest(anyList(), anyList());
         Assert.assertNotNull(konturFocusResponse);
@@ -92,7 +94,8 @@ public class AggregatorProxyServiceTest {
 
     @Test
     public void konturFocusEgrDetailsLegalTest() throws TException {
-        final ResponseEntity<String> responseEntity = new ResponseEntity<>(TestResponse.kfEgrDetailsLegal(), HttpStatus.OK);
+        final ResponseEntity<String> responseEntity =
+                new ResponseEntity<>(TestResponse.kfEgrDetailsLegal(), HttpStatus.OK);
         when(konturFocusApiMock.egrDetailsRequest(anyList(), anyList())).thenReturn(responseEntity);
 
         final KonturFocusRequest konturFocusRequest = new KonturFocusRequest();
@@ -100,7 +103,8 @@ public class AggregatorProxyServiceTest {
         egrDetailsQuery.setInn(INN_LIST);
         egrDetailsQuery.setOgrn(OGRN_LIST);
         konturFocusRequest.setEgrDetailsQuery(egrDetailsQuery);
-        final KonturFocusResponse konturFocusResponse = aggregatorProxyService.requestKonturFocus(konturFocusRequest, KonturFocusEndPoint.egrDetails);
+        final KonturFocusResponse konturFocusResponse =
+                aggregatorProxyService.requestKonturFocus(konturFocusRequest, KonturFocusEndPoint.egrDetails);
 
         verify(konturFocusApiMock, atLeastOnce()).egrDetailsRequest(anyList(), anyList());
         Assert.assertNotNull(konturFocusResponse);
@@ -108,7 +112,8 @@ public class AggregatorProxyServiceTest {
 
     @Test
     public void konturFocusLicenseTest() throws TException {
-        final ResponseEntity<String> responseEntity = new ResponseEntity<>(TestResponse.kfLicenseResp(), HttpStatus.OK);
+        final ResponseEntity<String> responseEntity =
+                new ResponseEntity<>(TestResponse.kfLicenseResp(), HttpStatus.OK);
         when(konturFocusApiMock.licenseRequest(anyList(), anyList())).thenReturn(responseEntity);
 
         final KonturFocusRequest konturFocusRequest = new KonturFocusRequest();
@@ -116,7 +121,8 @@ public class AggregatorProxyServiceTest {
         licencesQuery.setInn(INN_LIST);
         licencesQuery.setOgrn(OGRN_LIST);
         konturFocusRequest.setLicencesQuery(licencesQuery);
-        final KonturFocusResponse konturFocusResponse = aggregatorProxyService.requestKonturFocus(konturFocusRequest, KonturFocusEndPoint.licences);
+        final KonturFocusResponse konturFocusResponse =
+                aggregatorProxyService.requestKonturFocus(konturFocusRequest, KonturFocusEndPoint.licences);
 
         verify(konturFocusApiMock, atLeastOnce()).licenseRequest(anyList(), anyList());
         Assert.assertNotNull(konturFocusResponse);
@@ -124,7 +130,8 @@ public class AggregatorProxyServiceTest {
 
     @Test
     public void konturFocusBeneficialOwnerTest() throws TException {
-        final ResponseEntity<String> responseEntity = new ResponseEntity<>(TestResponse.kfLicenseResp(), HttpStatus.OK);
+        final ResponseEntity<String> responseEntity =
+                new ResponseEntity<>(TestResponse.kfLicenseResp(), HttpStatus.OK);
         when(konturFocusApiMock.beneficialOwnerRequest(anyList(), anyList())).thenReturn(responseEntity);
 
         final KonturFocusRequest konturFocusRequest = new KonturFocusRequest();
@@ -132,7 +139,8 @@ public class AggregatorProxyServiceTest {
         beneficialOwnerQuery.setInn(INN_LIST);
         beneficialOwnerQuery.setOgrn(OGRN_LIST);
         konturFocusRequest.setBeneficialOwnerQuery(beneficialOwnerQuery);
-        KonturFocusResponse konturFocusResponse = aggregatorProxyService.requestKonturFocus(konturFocusRequest, KonturFocusEndPoint.beneficial_owners);
+        KonturFocusResponse konturFocusResponse =
+                aggregatorProxyService.requestKonturFocus(konturFocusRequest, KonturFocusEndPoint.beneficial_owners);
 
         verify(konturFocusApiMock, atLeastOnce()).beneficialOwnerRequest(anyList(), anyList());
         Assert.assertNotNull(konturFocusResponse);
@@ -145,7 +153,8 @@ public class AggregatorProxyServiceTest {
 
         DaDataRequest daDataRequest = new DaDataRequest();
         daDataRequest.setPartyQuery(new PartyQuery());
-        DaDataResponse daDataResponse = aggregatorProxyService.requestDaData(daDataRequest, DaDataEndpoint.suggest_party);
+        DaDataResponse daDataResponse =
+                aggregatorProxyService.requestDaData(daDataRequest, DaDataEndpoint.suggest_party);
 
         verify(daDataApiMock, atLeastOnce()).partyRequest(any(DaDataQuery.class));
         Assert.assertNotNull(daDataResponse);
@@ -153,12 +162,14 @@ public class AggregatorProxyServiceTest {
 
     @Test
     public void daDataAddressRequestTest() throws TException {
-        final ResponseEntity<String> responseEntity = new ResponseEntity<>(TestResponse.daDataAddress(), HttpStatus.OK);
+        final ResponseEntity<String> responseEntity =
+                new ResponseEntity<>(TestResponse.daDataAddress(), HttpStatus.OK);
         when(daDataApiMock.addressRequest(any(DaDataQuery.class))).thenReturn(responseEntity);
 
         final DaDataRequest daDataRequest = new DaDataRequest();
         daDataRequest.setAddressQuery(new AddressQuery());
-        final DaDataResponse daDataResponse = aggregatorProxyService.requestDaData(daDataRequest, DaDataEndpoint.suggest_address);
+        final DaDataResponse daDataResponse =
+                aggregatorProxyService.requestDaData(daDataRequest, DaDataEndpoint.suggest_address);
 
         verify(daDataApiMock, atLeastOnce()).addressRequest(any(DaDataQuery.class));
         Assert.assertNotNull(daDataResponse);
@@ -171,7 +182,8 @@ public class AggregatorProxyServiceTest {
 
         final DaDataRequest daDataRequest = new DaDataRequest();
         daDataRequest.setBankQuery(new BankQuery());
-        final DaDataResponse daDataResponse = aggregatorProxyService.requestDaData(daDataRequest, DaDataEndpoint.suggest_bank);
+        final DaDataResponse daDataResponse =
+                aggregatorProxyService.requestDaData(daDataRequest, DaDataEndpoint.suggest_bank);
 
         verify(daDataApiMock, atLeastOnce()).bankRequest(any(DaDataQuery.class));
         Assert.assertNotNull(daDataResponse);
@@ -184,7 +196,8 @@ public class AggregatorProxyServiceTest {
 
         final DaDataRequest daDataRequest = new DaDataRequest();
         daDataRequest.setFioQuery(new FioQuery());
-        final DaDataResponse daDataResponse = aggregatorProxyService.requestDaData(daDataRequest, DaDataEndpoint.suggest_fio);
+        final DaDataResponse daDataResponse =
+                aggregatorProxyService.requestDaData(daDataRequest, DaDataEndpoint.suggest_fio);
 
         verify(daDataApiMock, atLeastOnce()).fioRequest(any(DaDataQuery.class));
         Assert.assertNotNull(daDataResponse);
@@ -199,7 +212,8 @@ public class AggregatorProxyServiceTest {
         final FmsUnitQuery fmsUnitQuery = new FmsUnitQuery();
         fmsUnitQuery.setQueryType(QueryType.FULL_TEXT_SEARCH);
         daDataRequest.setFmsUnitQuery(fmsUnitQuery);
-        final DaDataResponse daDataResponse = aggregatorProxyService.requestDaData(daDataRequest, DaDataEndpoint.suggest_fms_unit);
+        final DaDataResponse daDataResponse =
+                aggregatorProxyService.requestDaData(daDataRequest, DaDataEndpoint.suggest_fms_unit);
 
         verify(daDataApiMock, atLeastOnce()).fmsUnitRequest(any(DaDataQuery.class));
         Assert.assertNotNull(daDataResponse);
@@ -214,7 +228,8 @@ public class AggregatorProxyServiceTest {
         final FmsUnitQuery fmsUnitQuery = new FmsUnitQuery();
         fmsUnitQuery.setQueryType(QueryType.BY_INDENTIFIRE);
         daDataRequest.setFmsUnitQuery(fmsUnitQuery);
-        final DaDataResponse daDataResponse = aggregatorProxyService.requestDaData(daDataRequest, DaDataEndpoint.suggest_fms_unit);
+        final DaDataResponse daDataResponse =
+                aggregatorProxyService.requestDaData(daDataRequest, DaDataEndpoint.suggest_fms_unit);
 
         verify(daDataApiMock, atLeastOnce()).fmsUnitByIdRequest(any(DaDataQuery.class));
         Assert.assertNotNull(daDataResponse);
@@ -229,7 +244,8 @@ public class AggregatorProxyServiceTest {
         final OkvedQuery okvedQuery = new OkvedQuery();
         okvedQuery.setQueryType(QueryType.FULL_TEXT_SEARCH);
         daDataRequest.setOkvedQuery(okvedQuery);
-        final DaDataResponse daDataResponse = aggregatorProxyService.requestDaData(daDataRequest, DaDataEndpoint.okved2);
+        final DaDataResponse daDataResponse =
+                aggregatorProxyService.requestDaData(daDataRequest, DaDataEndpoint.okved2);
 
         verify(daDataApiMock, atLeastOnce()).okvedRequest(any(DaDataQuery.class));
         Assert.assertNotNull(daDataResponse);
@@ -244,7 +260,8 @@ public class AggregatorProxyServiceTest {
         final OkvedQuery okvedQuery = new OkvedQuery();
         okvedQuery.setQueryType(QueryType.BY_INDENTIFIRE);
         daDataRequest.setOkvedQuery(okvedQuery);
-        final DaDataResponse daDataResponse = aggregatorProxyService.requestDaData(daDataRequest, DaDataEndpoint.okved2);
+        final DaDataResponse daDataResponse =
+                aggregatorProxyService.requestDaData(daDataRequest, DaDataEndpoint.okved2);
 
         verify(daDataApiMock, atLeastOnce()).okvedByIdRequest(any(DaDataQuery.class));
         Assert.assertNotNull(daDataResponse);

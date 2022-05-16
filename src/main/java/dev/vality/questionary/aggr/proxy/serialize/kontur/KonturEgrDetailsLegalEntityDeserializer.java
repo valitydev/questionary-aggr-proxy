@@ -3,7 +3,8 @@ package dev.vality.questionary.aggr.proxy.serialize.kontur;
 import dev.vality.questionary.aggr.proxy.serialize.AbstractThriftDeserializer;
 import dev.vality.questionary_proxy_aggr.kontur_focus_egr_details.EgrDetailsLegalEntity;
 
-public class KonturEgrDetailsLegalEntityDeserializer extends AbstractThriftDeserializer<EgrDetailsLegalEntity._Fields, EgrDetailsLegalEntity> {
+public class KonturEgrDetailsLegalEntityDeserializer
+        extends AbstractThriftDeserializer<EgrDetailsLegalEntity._Fields, EgrDetailsLegalEntity> {
 
     public KonturEgrDetailsLegalEntityDeserializer() {
         addFieldNameConverter("foundersFL", field -> {

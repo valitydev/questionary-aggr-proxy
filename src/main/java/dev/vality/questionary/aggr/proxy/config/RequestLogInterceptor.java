@@ -13,7 +13,8 @@ import java.nio.charset.StandardCharsets;
 public class RequestLogInterceptor implements ClientHttpRequestInterceptor {
 
     @Override
-    public ClientHttpResponse intercept(HttpRequest request, byte[] body, ClientHttpRequestExecution execution) throws IOException {
+    public ClientHttpResponse intercept(HttpRequest request, byte[] body, ClientHttpRequestExecution execution)
+            throws IOException {
         logRequest(request, body);
         ClientHttpResponse response = execution.execute(request, body);
         logResponse(response);

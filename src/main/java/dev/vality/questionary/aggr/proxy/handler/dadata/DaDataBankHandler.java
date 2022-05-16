@@ -32,7 +32,8 @@ public class DaDataBankHandler extends AbstractDaDataHandler {
         log.info("Converted bankQuery: {}", daDataQuery);
         final ResponseEntity<String> responseEntity = daDataApi.bankRequest(daDataQuery);
         log.info("Read DaData bank response");
-        final BankResponseWrapper bankResponseWrapper = getObjectMapper().readValue(responseEntity.getBody(), BankResponseWrapper.class);
+        final BankResponseWrapper bankResponseWrapper =
+                getObjectMapper().readValue(responseEntity.getBody(), BankResponseWrapper.class);
         final List<BankContentWrapper> bankContentWrapperList = bankResponseWrapper.getBankContentWrapperList();
         final List<BankContent> bankContentList = bankContentWrapperList.stream()
                 .map(BankContentWrapper::getBankContent)
