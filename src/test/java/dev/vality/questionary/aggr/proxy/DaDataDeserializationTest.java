@@ -75,8 +75,8 @@ public class DaDataDeserializationTest {
         );
         Assert.assertEquals("LEGAL", partyContent.getType().name());
         Assert.assertEquals("ACTIVE", partyContent.getState().getStatus().name());
-        Assert.assertEquals("2019-09-10T03:00", partyContent.getState().getActualityDate());
-        Assert.assertEquals("1991-06-20T03:00", partyContent.getState().getRegistrationDate());
+        Assert.assertEquals("2019-09-10T00:00", partyContent.getState().getActualityDate());
+        Assert.assertEquals("1991-06-20T00:00", partyContent.getState().getRegistrationDate());
         Assert.assertEquals("2014", partyContent.getOpf().getType());
         Assert.assertEquals("12247", partyContent.getOpf().getCode());
         Assert.assertEquals("Публичное акционерное общество", partyContent.getOpf().getFullName());
@@ -84,7 +84,7 @@ public class DaDataDeserializationTest {
         Assert.assertEquals("7707083893", partyContent.getInn());
         Assert.assertEquals("1027700132195", partyContent.getOgrn());
         Assert.assertEquals("64.19", partyContent.getOkved());
-        Assert.assertEquals("2002-08-16T04:00", partyContent.getOgrnDate());
+        Assert.assertEquals("2002-08-16T00:00", partyContent.getOgrnDate());
         Assert.assertNotNull("г Москва, ул Вавилова, д 19", partyContent.getAddress().getValue());
         Assert.assertNotNull(
                 "г Москва, Академический р-н, ул Вавилова, д 19",
