@@ -9,9 +9,9 @@ import dev.vality.questionary_proxy_aggr.kontur_focus_req.ReqResponse;
 
 public class KonturReqResponseDeserializer extends AbstractThriftDeserializer<ReqResponse._Fields, ReqResponse> {
 
-    private static final ContractorIPConverter CONTRACTOR_IP_CONVERTER = new ContractorIPConverter();
+    private static final ContractorIpConverter CONTRACTOR_IP_CONVERTER = new ContractorIpConverter();
 
-    private static final ContractorULConverter CONTRACTOR_UL_CONVERTER = new ContractorULConverter();
+    private static final ContractorUlConverter CONTRACTOR_UL_CONVERTER = new ContractorUlConverter();
 
     public KonturReqResponseDeserializer() {
         addFieldNameConverter("IP", field -> {
@@ -34,7 +34,7 @@ public class KonturReqResponseDeserializer extends AbstractThriftDeserializer<Re
         return new ReqResponse();
     }
 
-    private static final class ContractorIPConverter
+    private static final class ContractorIpConverter
             implements UnionThriftFieldConverter<Contractor, ReqIndividualEntity> {
 
         @Override
@@ -49,7 +49,7 @@ public class KonturReqResponseDeserializer extends AbstractThriftDeserializer<Re
 
     }
 
-    private static final class ContractorULConverter
+    private static final class ContractorUlConverter
             implements UnionThriftFieldConverter<Contractor, ReqLegalEntity> {
 
         @Override
