@@ -258,7 +258,8 @@ public class KonturFocusDeserializationTest {
         BeneficialOwnerResponse beneficialOwnerResponse = beneficialOwnerResponseList.get(0);
 
         // Check beneficial owner FL
-        BeneficialOwnerFl beneficialOwnerFl = beneficialOwnerResponse.getBeneficialOwners().getBeneficialOwnersFl().get(0);
+        BeneficialOwnerFl beneficialOwnerFl =
+                beneficialOwnerResponse.getBeneficialOwners().getBeneficialOwnersFl().get(0);
         Assert.assertEquals("Штепа Сергей Вячеславович", beneficialOwnerFl.getFio());
         Assert.assertEquals(0, Double.compare(0.0067585999204311500, beneficialOwnerFl.getShare()));
         Assert.assertTrue(beneficialOwnerFl.isIsAccurate());

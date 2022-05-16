@@ -139,11 +139,21 @@ public class DaDataDeserializationTest {
         final FmsUnitResponseWrapper fmsUnitResponseWrapper =
                 objectMapper.readValue(TestResponse.daDataFmsUnit(), FmsUnitResponseWrapper.class);
         Assert.assertEquals(10, fmsUnitResponseWrapper.getFmsUnitContentWrapperList().size());
-        final FmsUnitContent fmsUnitContent = fmsUnitResponseWrapper.getFmsUnitContentWrapperList().get(0).getFmsUnitContent();
-        Assert.assertEquals("ИВАНОВСКИМ ПОСЕЛКОВЫЙ ОТДЕЛ МИЛИЦИИ ОВД КРАСНОАРМЕЙСКОГО РАЙОНА", fmsUnitContent.getValue());
-        Assert.assertEquals("ИВАНОВСКИМ ПОСЕЛКОВЫЙ ОТДЕЛ МИЛИЦИИ ОВД КРАСНОАРМЕЙСКОГО РАЙОНА", fmsUnitContent.getUnrestrictdValue());
+        final FmsUnitContent fmsUnitContent =
+                fmsUnitResponseWrapper.getFmsUnitContentWrapperList().get(0).getFmsUnitContent();
+        Assert.assertEquals(
+                "ИВАНОВСКИМ ПОСЕЛКОВЫЙ ОТДЕЛ МИЛИЦИИ ОВД КРАСНОАРМЕЙСКОГО РАЙОНА",
+                fmsUnitContent.getValue()
+        );
+        Assert.assertEquals(
+                "ИВАНОВСКИМ ПОСЕЛКОВЫЙ ОТДЕЛ МИЛИЦИИ ОВД КРАСНОАРМЕЙСКОГО РАЙОНА",
+                fmsUnitContent.getUnrestrictdValue()
+        );
         Assert.assertEquals("233-046", fmsUnitContent.getCode());
-        Assert.assertEquals("ИВАНОВСКИМ ПОСЕЛКОВЫЙ ОТДЕЛ МИЛИЦИИ ОВД КРАСНОАРМЕЙСКОГО РАЙОНА", fmsUnitContent.getName());
+        Assert.assertEquals(
+                "ИВАНОВСКИМ ПОСЕЛКОВЫЙ ОТДЕЛ МИЛИЦИИ ОВД КРАСНОАРМЕЙСКОГО РАЙОНА",
+                fmsUnitContent.getName()
+        );
         Assert.assertEquals("23", fmsUnitContent.getRegionCode());
         Assert.assertEquals("3", fmsUnitContent.getType());
     }

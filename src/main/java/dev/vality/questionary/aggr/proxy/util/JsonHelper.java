@@ -18,7 +18,9 @@ public class JsonHelper {
         if (jsonNode != null && jsonNode.getNodeType() == JsonNodeType.ARRAY) {
             nodeList = new ArrayList<>(jsonNode.size());
             for (JsonNode node : jsonNode) {
-                if (node.getNodeType() == JsonNodeType.NULL) continue;
+                if (node.getNodeType() == JsonNodeType.NULL) {
+                    continue;
+                }
                 nodeList.add(func.apply(node));
             }
             return nodeList;

@@ -10,9 +10,9 @@ import dev.vality.questionary_proxy_aggr.kontur_focus_egr_details.EgrDetailsResp
 public class KonturEgrDetailsResponseDeserializer
         extends AbstractThriftDeserializer<EgrDetailsResponse._Fields, EgrDetailsResponse> {
 
-    private static final UnionThriftFieldConverter CONTRACTOR_IP_CONVERTER = new ContractorIPConverter();
+    private static final UnionThriftFieldConverter CONTRACTOR_IP_CONVERTER = new ContractorIpConverter();
 
-    private static final UnionThriftFieldConverter CONTRACTOR_UL_CONVERTER = new ContractorULConverter();
+    private static final UnionThriftFieldConverter CONTRACTOR_UL_CONVERTER = new ContractorUlConverter();
 
     public KonturEgrDetailsResponseDeserializer() {
         addFieldNameConverter("IP", field -> {
@@ -35,7 +35,7 @@ public class KonturEgrDetailsResponseDeserializer
         return new EgrDetailsResponse();
     }
 
-    private static final class ContractorULConverter
+    private static final class ContractorUlConverter
             implements UnionThriftFieldConverter<Contractor, EgrDetailsLegalEntity> {
 
         @Override
@@ -49,7 +49,7 @@ public class KonturEgrDetailsResponseDeserializer
         }
     }
 
-    private static final class ContractorIPConverter
+    private static final class ContractorIpConverter
             implements UnionThriftFieldConverter<Contractor, EgrDetailsIndividualEntity> {
 
         @Override
